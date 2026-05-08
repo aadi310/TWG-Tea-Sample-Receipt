@@ -821,29 +821,22 @@ Powered by RDEP
 <div className="rounded-[22px] border border-[#e5dcc3] mt-3 font-poppins overflow-hidden bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
 
   {/* Premium Header */}
-  <div className="bg-[#887345] px-5 py-5">
+  <div className="bg-[#8a7642] px-5 pt-5 pb-4">
 
+    {/* Top Row */}
     <div className="flex items-start justify-between">
 
-      {/* Logo + Brand */}
-      <div>
-
-       <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm">
-  <img
-    src="/images/design-mode/twg_oval.png"
-    alt="TWG Tea"
-    className="h-12 w-auto object-contain"
-  />
-</div>
-
-        <div className="mt-3 text-[#ede7cf] text-[11px] tracking-[0.28em] uppercase font-medium">
-          Singapore Luxury Teas
-        </div>
-
+      {/* Logo */}
+      <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm">
+        <img
+          src="/images/design-mode/twg_oval.png"
+          alt="TWG Tea"
+          className="h-12 w-auto object-contain"
+        />
       </div>
 
       {/* QR */}
-      <div className="bg-[#9a8450] p-2.5 rounded-xl border border-[#b39a63]">
+      <div className="bg-[#9b8750] p-2.5 rounded-2xl border border-[#bca36a] shadow-sm">
         <Image
           src="/images/design-mode/qr-code.jpg"
           alt="Scan QR"
@@ -855,26 +848,28 @@ Powered by RDEP
 
     </div>
 
-    {/* Greeting + Total */}
-    <div className="flex items-end justify-between mt-6">
+    {/* Bottom Row */}
+    <div className="flex items-center justify-between mt-6 gap-4">
 
-      <div className="bg-[#9a8450] px-5 py-2.5 rounded-full flex items-center border border-[#b39a63]">
+      {/* Welcome Card */}
+      <div className="bg-[#a18b52] px-5 py-3 rounded-full flex items-center border border-[#c4ad72] min-w-[290px]">
 
-        <User2 className="h-4 w-4 mr-2 text-[#ede7cf]" />
+        <User2 className="h-5 w-5 mr-3 text-[#f6f1df]" />
 
-        <span className="text-sm font-medium text-[#f6f1df]">
+        <span className="text-[15px] font-medium text-[#fffdf6]">
           Welcome, {customerName}
         </span>
 
       </div>
 
-      <div className="bg-[#f8f4e8] px-5 py-3 rounded-2xl text-right border border-[#d8ccaa] min-w-[120px]">
+      {/* Total Paid */}
+      <div className="bg-[#f8f4e8] px-6 py-3 rounded-[22px] text-right border border-[#d8ccaa] shadow-sm min-w-[200px]">
 
         <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
           Total Paid
         </div>
 
-        <div className="text-xl font-semibold text-[#5f4f2c] mt-0.5">
+        <div className="text-[18px] leading-none font-semibold text-[#5f4f2c] mt-2">
           S${currentReceipt.total.toFixed(2)}
         </div>
 
@@ -885,32 +880,36 @@ Powered by RDEP
   </div>
 
   {/* Receipt Info Section */}
-  <div className="grid grid-cols-2 gap-4 p-4 bg-[#f8f5ea]">
+  <div className="grid grid-cols-2 gap-4 p-4 bg-[#f6f2e8]">
 
-    <div className="bg-white p-3.5 rounded-2xl border border-[#e6dcc0]">
+    {/* Receipt ID */}
+    <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
         Receipt ID
       </div>
 
-      <div className="text-xs font-mono font-semibold text-[#5f4f2c] mt-1">
+      <div className="text-[15px] font-semibold text-[#5f4f2c] mt-2 tracking-[0.02em]">
         {currentReceipt.id}
       </div>
 
     </div>
 
-    <div className="bg-white p-3.5 rounded-2xl border border-[#e6dcc0]">
+    {/* Date & Time */}
+    <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
         Date & Time
       </div>
 
-      <div className="text-xs font-medium text-[#5f4f2c] mt-1">
-        {currentReceipt.date}
+      <div className="text-[15px] font-medium text-[#5f4f2c] mt-2 flex items-center">
 
-        <span className="text-[#d2c5a0] mx-1.5">•</span>
+        <span>{currentReceipt.date}</span>
 
-        {currentReceipt.time}
+        <span className="text-[#cab98d] mx-2 text-xs">•</span>
+
+        <span>{currentReceipt.time}</span>
+
       </div>
 
     </div>
