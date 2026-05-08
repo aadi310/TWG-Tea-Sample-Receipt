@@ -2113,113 +2113,169 @@ Powered by RDEP
 
 </div>
           
-      {/* Social Media & Store Address */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins">
+     {/* Social Media & Store Address */}
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
-  <div className="flex justify-center space-x-6 mb-3">
+  {/* Social Media */}
+  <div className="flex justify-center space-x-6 mb-4">
 
+    {/* Instagram */}
     <button
-      onClick={() => handleSocialLink("https://www.instagram.com/malabargoldanddiamonds/?hl=en")}
+      type="button"
+      onClick={() =>
+        handleSocialLink("https://www.instagram.com/twgteaofficial/?hl=en")
+      }
       className="flex flex-col items-center"
     >
-      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center mb-1">
+
+      <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center mb-1.5">
+
         <Instagram className="h-4 w-4 text-white" />
+
       </div>
-      <span className="text-xs font-medium">Instagram</span>
+
+      <span className="text-[11px] font-medium text-[#5f4f2c]">
+        Instagram
+      </span>
+
     </button>
 
+
+    {/* Facebook */}
     <button
-      onClick={() => handleSocialLink("https://www.facebook.com/malabargoldanddiamonds/")}
+      type="button"
+      onClick={() =>
+        handleSocialLink("https://www.facebook.com/TWGTeaOfficial/")
+      }
       className="flex flex-col items-center"
     >
-      <div className="w-8 h-8 rounded-full bg-[#1877F2] flex items-center justify-center mb-1">
+
+      <div className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center mb-1.5">
+
         <Facebook className="h-4 w-4 text-white" />
+
       </div>
-      <span className="text-xs font-medium">Facebook</span>
+
+      <span className="text-[11px] font-medium text-[#5f4f2c]">
+        Facebook
+      </span>
+
     </button>
 
+
+    {/* Website */}
     <button
-      onClick={() => handleSocialLink("https://www.malabargoldanddiamonds.com/")}
+      type="button"
+      onClick={() =>
+        handleSocialLink("https://twgtea.com/sg/en")
+      }
       className="flex flex-col items-center"
     >
-      <div className="w-8 h-8 rounded-full bg-[#CE187D] flex items-center justify-center mb-1">
+
+      <div className="w-9 h-9 rounded-full bg-[#887345] flex items-center justify-center mb-1.5">
+
         <ExternalLink className="h-4 w-4 text-white" />
+
       </div>
-      <span className="text-xs font-medium">Website</span>
+
+      <span className="text-[11px] font-medium text-[#5f4f2c]">
+        Website
+      </span>
+
     </button>
 
   </div>
 
 
-  {/* Collapsible Store Location */}
-  <div className="text-xs text-gray-600 text-center mb-3 bg-[#F7F2F5] p-3 rounded-lg">
+  {/* Store Location */}
+  <div className="text-xs text-[#7a6a45] text-center mb-3 bg-[#faf7ef] border border-[#ece3cc] p-3 rounded-[18px]">
 
     <button
+      type="button"
       onClick={() => setShowStoreLocation(!showStoreLocation)}
-      className="w-full flex items-center justify-center mb-2 hover:text-[#CE187D] transition-colors"
+      className="w-full flex items-center justify-center mb-2 transition-colors"
     >
-      <MapPin className="h-3 w-3 mr-1 text-[#CE187D]" />
-      <span className="font-semibold text-[#682A49]">
-        Malabar Gold & Diamonds Store {showStoreLocation ? "▲" : "▼"}
+
+      <MapPin className="h-3.5 w-3.5 mr-1.5 text-[#887345]" />
+
+      <span className="font-semibold text-[#5f4f2c]">
+        TWG Tea Boutique {showStoreLocation ? "▲" : "▼"}
       </span>
+
     </button>
 
+
     {showStoreLocation && (
-      <div className="space-y-0.5">
 
-        <p className="font-bold text-gray-900">
-          Malabar Gold & Diamonds
+      <div className="space-y-1">
+
+        <p className="font-bold text-[#4f4123]">
+          TWG Tea at ION Orchard
         </p>
 
-        <p>No 52, opposite Metro Station MG Road</p>
-        <p>Bengaluru, Karnataka 560001</p>
-        <p>India</p>
+        <p>2 Orchard Turn, #02-20/21</p>
 
-        <p className="mt-2 text-[10px]">
-          GSTIN: 29AACCM5471H1Z9
+        <p>ION Orchard, Singapore 238801</p>
+
+        <p>Singapore</p>
+
+        <p className="mt-2 text-[10px] text-[#9d8b60]">
+          Boutique Experience & Tea Salon
         </p>
 
-        <p className="mt-1 text-[#CE187D] font-semibold">
-          Sales Associate: {currentReceipt.associate}
+        <p className="mt-1 text-[#887345] font-semibold">
+          Tea Associate: {currentReceipt.associate}
         </p>
 
       </div>
+
     )}
 
   </div>
 
 
-  {/* Compact Terms */}
+  {/* Terms */}
   <Button
     variant="ghost"
     size="sm"
-    className="w-full text-xs text-gray-500 hover:text-[#CE187D] h-6 font-medium"
+    className="w-full text-xs text-[#8f7f58] hover:text-[#887345] h-7 font-medium"
     onClick={() => setShowTerms(!showTerms)}
   >
     Terms & Conditions {showTerms ? "▲" : "▼"}
   </Button>
 
+
   {showTerms && (
-    <div className="text-[11px] text-gray-500 mt-2 space-y-1 px-2 font-medium">
 
-      <p>• All jewellery purchases include applicable GST as per Indian regulations.</p>
+    <div className="text-[11px] text-[#8f7f58] mt-2 space-y-1.5 px-2 leading-relaxed font-medium">
 
-      <p>• Diamond jewellery is certified as per Malabar quality standards.</p>
+      <p>
+        • Product availability and packaging may vary across TWG Tea boutiques and online collections.
+      </p>
 
-      <p>• Lifetime maintenance services available at Malabar stores.</p>
+      <p>
+        • All prices displayed are inclusive of applicable Singapore taxes unless otherwise stated.
+      </p>
 
-      <p>• © Malabar Gold & Diamonds. All rights reserved.</p>
+      <p>
+        • Membership benefits and promotional offers are subject to programme terms and participating locations.
+      </p>
+
+      <p>
+        • © TWG Tea Company Pte Ltd. All rights reserved.
+      </p>
 
     </div>
+
   )}
 
 
-  {/* Powered by RDEP */}
-  <div className="text-center mt-2 pt-2 border-t border-[#ecd9e4]">
+  {/* Powered by */}
+  <div className="text-center mt-3 pt-3 border-t border-[#ece3cc]">
 
-    <div className="flex items-center justify-center space-x-1">
+    <div className="flex items-center justify-center space-x-1.5">
 
-      <span className="text-xs text-gray-400 font-medium">
+      <span className="text-[11px] text-[#a39267] font-medium">
         Powered by
       </span>
 
@@ -2326,30 +2382,38 @@ Powered by RDEP
 
         {/* Transaction History Modal */}
 {showTransactionHistory && (
-  <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4">
 
     {/* Backdrop */}
     <div
-      className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"
+      className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
       onClick={() => setShowTransactionHistory(false)}
     />
 
+
     {/* Modal */}
-    <div className="relative bg-white rounded-xl w-full max-w-sm overflow-hidden shadow-2xl border border-[#ecd9e4] font-poppins">
+    <div className="relative bg-white rounded-[26px] w-full max-w-sm overflow-hidden shadow-2xl border border-[#e5dcc3] font-poppins">
 
       {/* Header */}
-      <div className="flex justify-between items-center p-4 bg-[#CE187D] text-white">
-        <h3 className="text-base font-bold flex items-center uppercase tracking-tight">
+      <div className="flex justify-between items-center px-4 py-4 bg-[#887345] text-white">
+
+        <h3 className="text-base font-semibold flex items-center tracking-[0.04em]">
+
           <History className="h-5 w-5 mr-2" />
+
           Purchase History
+
         </h3>
+
 
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-white hover:bg-[#B7156D] rounded-full"
+          className="h-8 w-8 text-white hover:bg-[#7b683d] rounded-full"
           onClick={() => setShowTransactionHistory(false)}
         >
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -2365,41 +2429,62 @@ Powered by RDEP
             <path d="M18 6 6 18"></path>
             <path d="m6 6 12 12"></path>
           </svg>
+
         </Button>
+
       </div>
 
+
       {/* Transaction List */}
-      <div className="max-h-80 overflow-y-auto p-3 bg-[#F7F2F5]">
-        <div className="space-y-2">
+      <div className="max-h-80 overflow-y-auto p-3 bg-[#faf7ef]">
+
+        <div className="space-y-2.5">
 
           {transactionHistory.map((transaction) => (
 
             <button
               key={transaction.id}
+              type="button"
               onClick={() => {
+
                 setCurrentReceiptId(transaction.id)
+
                 setShowTransactionHistory(false)
-                window.scrollTo({ top: 0, behavior: "smooth" })
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+
               }}
-              className="w-full flex items-center p-3 bg-white border border-[#ecd9e4] rounded-xl shadow-sm hover:border-[#CE187D] transition-all cursor-pointer group"
+              className="w-full flex items-center p-3 bg-white border border-[#e5dcc3] rounded-[20px] shadow-sm hover:border-[#bca36a] transition-all cursor-pointer group"
             >
 
-              <div className="bg-[#F7F2F5] p-2 rounded-lg mr-3 group-hover:bg-[#CE187D] transition-colors">
-                <FileText className="h-5 w-5 text-[#CE187D] group-hover:text-white" />
+              {/* Icon */}
+              <div className="bg-[#faf7ef] border border-[#e5dcc3] p-2 rounded-[14px] mr-3 group-hover:bg-[#887345] transition-colors">
+
+                <FileText className="h-5 w-5 text-[#887345] group-hover:text-white transition-colors" />
+
               </div>
 
+
+              {/* Details */}
               <div className="flex-grow text-left">
-                <div className="font-bold text-sm text-gray-900 leading-none mb-1">
-                  Malabar G & D
+
+                <div className="font-semibold text-[14px] text-[#4f4123] leading-none mb-1">
+                  TWG Tea Singapore
                 </div>
 
-                <div className="text-gray-400 text-[11px] font-medium uppercase tracking-tighter">
+                <div className="text-[#9d8b60] text-[11px] font-medium uppercase tracking-[0.08em]">
                   {transaction.date}
                 </div>
+
               </div>
 
-              <div className="font-bold text-[#CE187D]">
-                ₹{transaction.amount.toFixed(2)}
+
+              {/* Amount */}
+              <div className="font-bold text-[#887345] text-[14px]">
+                S${transaction.amount.toFixed(2)}
               </div>
 
             </button>
@@ -2407,20 +2492,26 @@ Powered by RDEP
           ))}
 
         </div>
+
       </div>
 
+
       {/* Footer */}
-      <div className="p-3 border-t border-[#ecd9e4] bg-white">
+      <div className="p-3 border-t border-[#ece3cc] bg-white">
+
         <Button
-          className="w-full bg-[#682A49] hover:bg-[#4f1f36] text-white font-bold h-10 rounded-xl transition-all"
+          className="w-full bg-[#887345] hover:bg-[#7b683d] text-white font-semibold h-11 rounded-[18px] transition-all"
           onClick={() => setShowTransactionHistory(false)}
         >
           Close History
         </Button>
+
       </div>
 
     </div>
+
   </div>
+
 )}
         
         {/* Refer & Earn Modal */}
