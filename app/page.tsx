@@ -272,7 +272,7 @@ const receipts = {
         skuId: "T8101",
         teaType: "Herbal Tea",
         collection: "Loose Leaf Tea",
-        flavour: "Herbaceous And Vegetal",
+        flavour: "Herbaceous",
         packaging: "Loose Leaf Tea",
         size: "50g pack"
       },
@@ -1204,146 +1204,231 @@ Powered by RDEP
 </div>
 
           {/* Customer Experience Feedback */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+
   {feedbackSubmitted ? (
-    <div className="text-center py-6 bg-[#F7F2F5] rounded-xl border border-[#ecd9e4]">
-      <div className="w-12 h-12 bg-[#CE187D] rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-pink-100">
+
+    <div className="text-center py-6 bg-[#faf7ef] rounded-[20px] border border-[#ece3cc]">
+
+      <div className="w-12 h-12 bg-[#887345] rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
+
         <ThumbsUp className="h-6 w-6 text-white" />
+
       </div>
 
-      <div className="text-sm font-bold text-[#682A49] mb-1">
-        Thank You for Your Feedback!
+      <div className="text-sm font-bold text-[#5f4f2c] mb-1">
+        Thank You for Your Feedback
       </div>
 
-      <div className="text-xs font-medium text-gray-500">
-        Your feedback helps us improve your next shopping experience.
+      <div className="text-xs font-medium text-[#9d8b60]">
+        Your feedback helps us refine your next tea experience.
       </div>
+
     </div>
+
   ) : (
+
     <div className="space-y-4">
 
+      {/* Header */}
       <div className="flex items-center justify-between">
-        <h3 className="text-base font-semibold text-[#682A49]">
-          Rate Your Experience
+
+        <h3 className="text-base font-semibold text-[#5f4f2c]">
+          Rate Your Tea Experience
         </h3>
 
-        <span className="text-[10px] font-bold text-[#CE187D] bg-[#F7F2F5] px-2 py-1 rounded">
-          CUSTOMER FEEDBACK
+        <span className="text-[10px] font-bold text-[#887345] bg-[#faf7ef] border border-[#e5dcc3] px-2 py-1 rounded-full tracking-[0.12em]">
+          FEEDBACK
         </span>
+
       </div>
 
-      {/* Star Rating */}
+
+      {/* Rating */}
       <div className="flex justify-center gap-3 py-2">
+
         {[1, 2, 3, 4, 5].map((star) => (
+
           <button
             key={star}
             onClick={() => setRating(star)}
             className="transition-transform active:scale-90"
           >
+
             <Star
-              className={`h-8 w-8 ${
+              className={`h-8 w-8 transition-colors ${
                 star <= rating
-                  ? "fill-[#CE187D] text-[#CE187D]"
-                  : "text-gray-200"
+                  ? "fill-[#887345] text-[#887345]"
+                  : "text-[#ddd3ba]"
               }`}
             />
+
           </button>
+
         ))}
+
       </div>
+
+
+      {/* Experience Tags */}
+      <div className="flex flex-wrap justify-center gap-2">
+
+        {[
+          "Excellent Service",
+          "Premium Quality",
+          "Beautiful Packaging",
+          "Fresh Aroma",
+          "Great Ambience"
+        ].map((tag) => (
+
+          <button
+            key={tag}
+            className="text-[10px] px-3 py-1.5 rounded-full border border-[#d8ccaa] text-[#7a6a45] bg-[#faf7ef]"
+          >
+            {tag}
+          </button>
+
+        ))}
+
+      </div>
+
 
       {/* Feedback Text */}
       <div className="space-y-2">
+
         <Label
           htmlFor="comments"
-          className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1"
+          className="text-[11px] font-bold text-[#9d8b60] uppercase tracking-[0.12em] ml-1"
         >
-          Tell us more (Optional)
+          Share Your Experience (Optional)
         </Label>
 
         <textarea
           id="comments"
           rows={3}
-          placeholder="How was your in-store experience and service today?"
-          className="w-full p-3 text-xs border border-[#ecd9e4] rounded-xl focus:ring-1 focus:ring-[#C92C83] focus:border-[#C92C83] outline-none transition-all resize-none"
+          placeholder="How was your tea selection and boutique experience today?"
+          className="w-full p-3 text-xs border border-[#e5dcc3] rounded-[18px] bg-[#fffdfa] focus:ring-1 focus:ring-[#887345] focus:border-[#887345] outline-none transition-all resize-none text-[#5f4f2c] placeholder:text-[#b8ab84]"
           value={feedbackText}
           onChange={(e) => setFeedbackText(e.target.value)}
         />
+
       </div>
 
+
+      {/* Submit */}
       <Button
-        className="w-full bg-gradient-to-r from-[#CE187D] to-[#682A49] hover:opacity-90 text-white h-10 text-xs font-bold rounded-xl transition-all"
+        className="w-full bg-[#887345] hover:bg-[#7b683d] text-white h-11 text-xs font-bold rounded-[18px] transition-all"
         onClick={handleFeedbackSubmit}
         disabled={!rating}
       >
         Submit Feedback
       </Button>
 
-      <p className="text-[10px] text-center text-gray-400 font-medium">
-        Your feedback helps us serve you better.
+
+      <p className="text-[10px] text-center text-[#a39267] font-medium">
+        Your feedback helps us craft better tea experiences.
       </p>
 
     </div>
+
   )}
+
 </div>
           
-          {/* Malabar Privilege Rewards */}
-<div className="bg-white rounded-lg border border-[#ecd9e4] p-3 font-poppins">
+          {/* MyTWG Loyalty Programme */}
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
-  <div className="flex items-center justify-between mb-3">
+  {/* Header */}
+  <div className="flex items-center justify-between mb-4">
 
-    <h3 className="text-base font-semibold flex items-center text-[#682A49]">
-      <div className="bg-[#CE187D] text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] mr-2 shadow-sm">
-        ♦
+    <div className="flex items-center">
+
+      <div className="w-10 h-10 rounded-full bg-[#faf7ef] border border-[#e5dcc3] flex items-center justify-center mr-3">
+
+        <Award className="h-5 w-5 text-[#887345]" />
+
       </div>
-      Malabar Privilege
-    </h3>
 
-    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-      Member
-    </span>
+      <div>
+
+        <h3 className="text-base font-semibold text-[#5f4f2c]">
+          MyTWG Membership
+        </h3>
+
+        <div className="text-[10px] uppercase tracking-[0.18em] text-[#a39267] font-semibold mt-0.5">
+          Loyalty Programme
+        </div>
+
+      </div>
+
+    </div>
+
+    <Badge
+      variant="outline"
+      className="text-[10px] border-[#d8ccaa] text-[#887345] bg-[#faf7ef] font-medium"
+    >
+      ACTIVE MEMBER
+    </Badge>
 
   </div>
 
 
-  <div className="grid grid-cols-3 gap-3 mb-4">
+  {/* Membership Card */}
+  <div className="rounded-[22px] bg-[#887345] p-4 border border-[#9b8750] relative overflow-hidden">
 
-    {/* Points Earned */}
-    <div className="text-center p-2 bg-gray-50 rounded-xl border border-gray-100">
+    <div className="absolute top-0 right-0 w-28 h-28 rounded-full bg-white/5 -mr-10 -mt-10" />
 
-      <div className="text-lg font-bold text-gray-900">
-        {Math.floor(currentReceipt.total / 100)}
+    <div className="relative z-10">
+
+      <div className="flex items-start justify-between">
+
+        <div>
+
+          <div className="text-[#f4eedc] text-[11px] uppercase tracking-[0.22em] font-medium">
+            Membership ID
+          </div>
+
+          <div className="text-white text-lg font-semibold mt-1 tracking-[0.04em]">
+            MTWG-4582-1193
+          </div>
+
+        </div>
+
+        <img
+          src="/images/design-mode/twg_oval.png"
+          alt="TWG Tea"
+          className="h-10 w-auto object-contain opacity-90"
+        />
+
       </div>
 
-      <div className="text-[10px] font-medium text-gray-500 uppercase">
-        Points Earned
-      </div>
 
-    </div>
+      <div className="mt-5 flex items-end justify-between">
 
+        <div>
 
-    {/* Total Balance */}
-    <div className="text-center p-2 bg-[#CE187D]/5 rounded-xl border border-[#CE187D]/10">
+          <div className="text-[#f4eedc] text-[10px] uppercase tracking-[0.18em]">
+            Member
+          </div>
 
-      <div className="text-lg font-bold text-[#CE187D]">
-        3,240
-      </div>
+          <div className="text-white text-sm font-medium mt-1">
+            {customerName}
+          </div>
 
-      <div className="text-[10px] font-medium text-[#CE187D] uppercase">
-        Total Points
-      </div>
+        </div>
 
-    </div>
+        <div className="text-right">
 
+          <div className="text-[#f4eedc] text-[10px] uppercase tracking-[0.18em]">
+            Country
+          </div>
 
-    {/* Expiring */}
-    <div className="text-center p-2 bg-gray-50 rounded-xl border border-gray-100">
+          <div className="text-white text-sm font-medium mt-1">
+            Singapore
+          </div>
 
-      <div className="text-lg font-bold text-gray-900">
-        420
-      </div>
+        </div>
 
-      <div className="text-[10px] font-medium text-gray-500 uppercase">
-        Expiring Soon
       </div>
 
     </div>
@@ -1351,44 +1436,85 @@ Powered by RDEP
   </div>
 
 
-  {/* Progress */}
-  <div className="space-y-2">
+  {/* Benefits */}
+  <div className="mt-4 space-y-2.5">
 
-    <div className="relative w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-      <div className="absolute top-0 left-0 h-full bg-[#CE187D] w-3/5 rounded-full" />
+    <div className="flex items-start bg-[#faf7ef] border border-[#ece3cc] rounded-[18px] p-3">
+
+      <div className="w-8 h-8 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mr-3 flex-shrink-0">
+
+        <ShoppingBag className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <div>
+
+        <div className="text-sm font-semibold text-[#5f4f2c]">
+          Earn Rewards on Purchases
+        </div>
+
+        <div className="text-[11px] text-[#8f7f58] mt-1 leading-relaxed">
+          Every dollar transacted at participating TWG Tea Salons & Boutiques contributes towards rewards and membership benefits.
+        </div>
+
+      </div>
+
     </div>
 
-    <div className="flex justify-between items-center px-1">
 
-      <span className="text-[10px] font-medium text-gray-400">
-        Next Reward: 4000 pts
-      </span>
+    <div className="flex items-start bg-[#faf7ef] border border-[#ece3cc] rounded-[18px] p-3">
 
-      <span className="text-[10px] font-bold text-[#CE187D]">
-        62% to ₹1000 Voucher
-      </span>
+      <div className="w-8 h-8 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mr-3 flex-shrink-0">
+
+        <Gift className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <div>
+
+        <div className="text-sm font-semibold text-[#5f4f2c]">
+          Exclusive Member Offers
+        </div>
+
+        <div className="text-[11px] text-[#8f7f58] mt-1 leading-relaxed">
+          Receive access to selected rewards, offers and seasonal privileges available through the MyTWG programme.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div className="flex items-start bg-[#faf7ef] border border-[#ece3cc] rounded-[18px] p-3">
+
+      <div className="w-8 h-8 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mr-3 flex-shrink-0">
+
+        <Globe className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <div>
+
+        <div className="text-sm font-semibold text-[#5f4f2c]">
+          International Participation
+        </div>
+
+        <div className="text-[11px] text-[#8f7f58] mt-1 leading-relaxed">
+          Membership purchases are supported across participating TWG Tea locations and online shopping regions.
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
 
-  <div className="mt-4 grid grid-cols-2 gap-2">
+  {/* Footer Note */}
+  <div className="mt-4 pt-4 border-t border-dashed border-[#ddd2b5]">
 
-    <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> ₹1000 = 10 Points
-    </div>
-
-    <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Birthday Vouchers
-    </div>
-
-    <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Free Jewellery Cleaning
-    </div>
-
-    <div className="flex items-center text-[10px] font-medium text-gray-600 bg-gray-50 px-2 py-1.5 rounded-md">
-      <span className="text-[#CE187D] mr-1.5 text-xs">✓</span> Exclusive Collection Access
+    <div className="text-[10px] leading-relaxed text-[#9d8b60] text-center">
+      Membership benefits, rewards and programme eligibility are subject to MyTWG Membership Terms & Conditions.
     </div>
 
   </div>
