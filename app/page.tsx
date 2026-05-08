@@ -828,11 +828,13 @@ Powered by RDEP
       {/* Logo + Brand */}
       <div>
 
-        <img
-          src="/images/design-mode/twg_oval.png"
-          alt="TWG Tea"
-          className="h-14 w-auto object-contain"
-        />
+       <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm">
+  <img
+    src="/images/design-mode/twg_oval.png"
+    alt="TWG Tea"
+    className="h-12 w-auto object-contain"
+  />
+</div>
 
         <div className="mt-3 text-[#ede7cf] text-[11px] tracking-[0.28em] uppercase font-medium">
           Singapore Luxury Teas
