@@ -1810,7 +1810,7 @@ Powered by RDEP
 </div>
           
           
-     {/* Exclusive Offers */}
+    {/* Exclusive Offers */}
 <div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
   {/* Header */}
@@ -1836,23 +1836,16 @@ Powered by RDEP
 
     {/* Coupon 1 */}
     <button
-      onClick={async () => {
+      type="button"
+      onClick={() => {
 
-        try {
+        navigator.clipboard.writeText("TEATIME15")
 
-          await navigator.clipboard.writeText("TEATIME15")
+        setCopiedCoupon("TEATIME15")
 
-          setCopiedCoupon("TEATIME15")
-
-          setTimeout(() => {
-            setCopiedCoupon(null)
-          }, 2000)
-
-        } catch (err) {
-
-          console.error("Copy failed", err)
-
-        }
+        setTimeout(() => {
+          setCopiedCoupon(null)
+        }, 2000)
 
       }}
       className="w-full text-left group"
@@ -1916,23 +1909,16 @@ Powered by RDEP
 
     {/* Coupon 2 */}
     <button
-      onClick={async () => {
+      type="button"
+      onClick={() => {
 
-        try {
+        navigator.clipboard.writeText("TWGGIFT25")
 
-          await navigator.clipboard.writeText("TWGGIFT25")
+        setCopiedCoupon("TWGGIFT25")
 
-          setCopiedCoupon("TWGGIFT25")
-
-          setTimeout(() => {
-            setCopiedCoupon(null)
-          }, 2000)
-
-        } catch (err) {
-
-          console.error("Copy failed", err)
-
-        }
+        setTimeout(() => {
+          setCopiedCoupon(null)
+        }, 2000)
 
       }}
       className="w-full text-left group"
@@ -2005,7 +1991,8 @@ Powered by RDEP
 
   </div>
 
-</div>          
+</div>
+          
           {/* Need Help */}
 <div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins shadow-sm">
   <h3 className="text-sm font-semibold text-[#682A49] mb-3 flex items-center">
