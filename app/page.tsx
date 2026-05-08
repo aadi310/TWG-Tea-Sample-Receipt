@@ -821,56 +821,60 @@ Powered by RDEP
 <div className="rounded-[22px] border border-[#e5dcc3] mt-3 font-poppins overflow-hidden bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
 
   {/* Premium Header */}
-  <div className="bg-[#8a7642] px-5 pt-5 pb-4">
+  <div className="bg-[#8a7642] px-5 py-5">
 
-    {/* Top Row */}
     <div className="flex items-start justify-between">
 
-      {/* Logo */}
-      <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm">
-        <img
-          src="/images/design-mode/twg_oval.png"
-          alt="TWG Tea"
-          className="h-12 w-auto object-contain"
-        />
-      </div>
+      {/* Left Side */}
+      <div className="flex flex-col justify-between h-[140px]">
 
-      {/* QR */}
-      <div className="bg-[#9b8750] p-2.5 rounded-2xl border border-[#bca36a] shadow-sm">
-        <Image
-          src="/images/design-mode/qr-code.jpg"
-          alt="Scan QR"
-          width={62}
-          height={62}
-          className="object-contain rounded-md"
-        />
-      </div>
-
-    </div>
-
-    {/* Bottom Row */}
-    <div className="flex items-center justify-between mt-6 gap-4">
-
-      {/* Welcome Card */}
-      <div className="bg-[#a18b52] px-5 py-3 rounded-full flex items-center border border-[#c4ad72] min-w-[290px]">
-
-        <User2 className="h-5 w-5 mr-3 text-[#f6f1df]" />
-
-        <span className="text-[15px] font-medium text-[#fffdf6]">
-          Welcome, {customerName}
-        </span>
-
-      </div>
-
-      {/* Total Paid */}
-      <div className="bg-[#f8f4e8] px-6 py-3 rounded-[22px] text-right border border-[#d8ccaa] shadow-sm min-w-[200px]">
-
-        <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
-          Total Paid
+        {/* Logo */}
+        <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm w-fit">
+          <img
+            src="/images/design-mode/twg_oval.png"
+            alt="TWG Tea"
+            className="h-12 w-auto object-contain"
+          />
         </div>
 
-        <div className="text-[18px] leading-none font-semibold text-[#5f4f2c] mt-2">
-          S${currentReceipt.total.toFixed(2)}
+        {/* Welcome Card */}
+        <div className="bg-[#a18b52] px-5 py-3 rounded-full flex items-center border border-[#c4ad72] min-w-[290px]">
+
+          <User2 className="h-5 w-5 mr-3 text-[#f6f1df]" />
+
+          <span className="text-[15px] font-medium text-[#fffdf6]">
+            Welcome, {customerName}
+          </span>
+
+        </div>
+
+      </div>
+
+      {/* Right Side */}
+      <div className="flex flex-col justify-between items-end h-[140px]">
+
+        {/* QR */}
+        <div className="bg-[#9b8750] p-2.5 rounded-2xl border border-[#bca36a] shadow-sm">
+          <Image
+            src="/images/design-mode/qr-code.jpg"
+            alt="Scan QR"
+            width={62}
+            height={62}
+            className="object-contain rounded-md"
+          />
+        </div>
+
+        {/* Total Paid */}
+        <div className="bg-[#f8f4e8] px-6 py-3 rounded-[22px] text-right border border-[#d8ccaa] shadow-sm min-w-[190px]">
+
+          <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
+            Total Paid
+          </div>
+
+          <div className="text-[18px] leading-none font-semibold text-[#5f4f2c] mt-2">
+            S${currentReceipt.total.toFixed(2)}
+          </div>
+
         </div>
 
       </div>
@@ -882,7 +886,6 @@ Powered by RDEP
   {/* Receipt Info Section */}
   <div className="grid grid-cols-2 gap-4 p-4 bg-[#f6f2e8]">
 
-    {/* Receipt ID */}
     <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
@@ -895,7 +898,6 @@ Powered by RDEP
 
     </div>
 
-    {/* Date & Time */}
     <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
