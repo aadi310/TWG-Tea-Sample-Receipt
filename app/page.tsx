@@ -912,52 +912,61 @@ Powered by RDEP
 </div>
           
          {/* Purchase Details */}
-<div className="bg-white rounded-lg border border-gray-200 p-3 font-poppins">
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-3 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
+  {/* Section Header */}
   <div className="flex items-center justify-between mb-3">
-    <h3 className="text-base font-semibold flex items-center text-[#682A49]">
-      <Diamond className="mr-2 h-4 w-4" />
+
+    <h3 className="text-base font-semibold flex items-center text-[#5f4f2c]">
+
+      <ShoppingBag className="mr-2 h-4 w-4 text-[#887345]" />
+
       Purchase Details
+
     </h3>
 
     <Badge
       variant="outline"
-      className="text-[10px] border-[#CE187D]/30 text-[#CE187D] font-medium"
+      className="text-[10px] border-[#cdbb87] text-[#887345] font-medium bg-[#faf7ef]"
     >
       {currentReceipt.items.length} Items
     </Badge>
+
   </div>
 
 
-  <div className="space-y-2">
+  <div className="space-y-2.5">
 
     {currentReceipt.items.map((product) => (
 
-      <div key={product.id} className="border border-gray-100 rounded-lg overflow-hidden">
+      <div
+        key={product.id}
+        className="border border-[#ece3cc] rounded-[18px] overflow-hidden bg-[#fffdfa]"
+      >
 
 
-        {/* Item header */}
+        {/* Item Header */}
         <div
-          className="flex items-center justify-between p-2.5 bg-gray-50/50 cursor-pointer"
+          className="flex items-center justify-between p-3 bg-[#faf7ef] cursor-pointer"
           onClick={() => toggleProductExpansion(product.id)}
         >
 
           <div className="flex items-center flex-1">
 
             <ChevronRight
-              className={`h-3 w-3 mr-2 text-[#CE187D] transition-transform duration-200 ${
+              className={`h-3.5 w-3.5 mr-2 text-[#887345] transition-transform duration-200 ${
                 expandedProducts.includes(product.id) ? "rotate-90" : ""
               }`}
             />
 
             <div className="flex-1">
 
-              <span className="font-semibold text-sm text-gray-900">
+              <span className="font-semibold text-[15px] text-[#4f4123]">
                 {product.name}
               </span>
 
-              <div className="text-[10px] font-medium text-gray-400 uppercase tracking-tight">
-                {product.category}
+              <div className="text-[10px] font-medium text-[#9d8b60] uppercase tracking-[0.18em] mt-0.5">
+                {product.teaType}
               </div>
 
             </div>
@@ -967,12 +976,12 @@ Powered by RDEP
 
           <div className="flex items-center space-x-3 text-right">
 
-            <div className="text-xs font-medium text-gray-500">
+            <div className="text-xs font-medium text-[#9d8b60]">
               x{product.quantity}
             </div>
 
-            <div className="font-bold text-sm text-gray-900">
-              ₹{(product.price * product.quantity).toFixed(2)}
+            <div className="font-bold text-[15px] text-[#4f4123]">
+              S${(product.price * product.quantity).toFixed(2)}
             </div>
 
           </div>
@@ -980,31 +989,42 @@ Powered by RDEP
         </div>
 
 
-        {/* Expanded details */}
+        {/* Expanded Details */}
         {expandedProducts.includes(product.id) && (
 
-          <div className="bg-white p-3 border-t border-gray-100">
+          <div className="bg-white px-3 pb-3 pt-2 border-t border-[#f1ead8]">
 
-            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-[11px] font-medium text-gray-600">
+            {/* Description */}
+            <div className="text-[11px] text-[#7a6a45] leading-relaxed mb-3">
+              {product.description}
+            </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
-                <span className="text-gray-400">Code:</span>
-                <span>{product.itemCode}</span>
+            {/* Product Metadata */}
+            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-[11px] font-medium text-[#6f603d]">
+
+              <div className="flex justify-between border-b border-[#f5efdf] pb-1">
+                <span className="text-[#aa9a70]">SKU</span>
+                <span>{product.skuId}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
-                <span className="text-gray-400">Purity:</span>
-                <span>{product.purity}</span>
+              <div className="flex justify-between border-b border-[#f5efdf] pb-1">
+                <span className="text-[#aa9a70]">Flavour</span>
+                <span>{product.flavour}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
-                <span className="text-gray-400">Net Weight:</span>
-                <span>{product.netWeight} g</span>
+              <div className="flex justify-between border-b border-[#f5efdf] pb-1">
+                <span className="text-[#aa9a70]">Packaging</span>
+                <span>{product.packaging}</span>
               </div>
 
-              <div className="flex justify-between border-b border-gray-50 pb-1">
-                <span className="text-gray-400">Making:</span>
-                <span>₹{product.makingCharges?.toFixed(2)}</span>
+              <div className="flex justify-between border-b border-[#f5efdf] pb-1">
+                <span className="text-[#aa9a70]">Size</span>
+                <span>{product.size}</span>
+              </div>
+
+              <div className="flex justify-between border-b border-[#f5efdf] pb-1 col-span-2">
+                <span className="text-[#aa9a70]">Collection</span>
+                <span>{product.collection}</span>
               </div>
 
             </div>
@@ -1014,16 +1034,16 @@ Powered by RDEP
         )}
 
 
-        {/* Feedback Toggle */}
+        {/* Tea Feedback Toggle */}
         <div className="px-3 pb-2 pt-1">
 
           <button
             onClick={() => toggleItemFeedback(product.id)}
-            className="text-[11px] text-[#CE187D] font-semibold"
+            className="text-[11px] text-[#887345] font-semibold"
           >
             {expandedItemFeedback.includes(product.id)
-              ? "Hide item feedback"
-              : "Rate this item"}
+              ? "Hide tea feedback"
+              : "Rate this tea"}
           </button>
 
         </div>
@@ -1032,7 +1052,7 @@ Powered by RDEP
         {/* Feedback Panel */}
         {expandedItemFeedback.includes(product.id) && (
 
-          <div className="mx-3 mb-3 p-3 border border-gray-200 rounded-lg bg-gray-50">
+          <div className="mx-3 mb-3 p-3 border border-[#ece3cc] rounded-[18px] bg-[#faf7ef]">
 
 
             {/* Rating */}
@@ -1049,8 +1069,8 @@ Powered by RDEP
                     className={`h-4 w-4 ${
                       star <=
                       (itemFeedback[currentReceipt.id]?.[product.id]?.rating || 0)
-                        ? "fill-[#CE187D] text-[#CE187D]"
-                        : "text-gray-300"
+                        ? "fill-[#887345] text-[#887345]"
+                        : "text-[#d8ccb0]"
                     }`}
                   />
 
@@ -1061,10 +1081,16 @@ Powered by RDEP
             </div>
 
 
-            {/* Tags */}
+            {/* Tea Experience Tags */}
             <div className="flex flex-wrap gap-2 justify-center">
 
-              {["Design","Finish","Value","Craftsmanship"].map((tag) => {
+              {[
+                "Aromatic",
+                "Refreshing",
+                "Smooth",
+                "Balanced",
+                "Premium Blend"
+              ].map((tag) => {
 
                 const active =
                   itemFeedback[currentReceipt.id]?.[product.id]?.tags?.includes(tag)
@@ -1074,10 +1100,10 @@ Powered by RDEP
                   <button
                     key={tag}
                     onClick={() => toggleItemTag(product.id, tag)}
-                    className={`text-[10px] px-2 py-1 rounded-full border ${
+                    className={`text-[10px] px-2.5 py-1 rounded-full border transition-colors ${
                       active
-                        ? "bg-[#CE187D] text-white border-[#CE187D]"
-                        : "border-gray-200"
+                        ? "bg-[#887345] text-white border-[#887345]"
+                        : "border-[#d9cda9] text-[#7a6a45] bg-white"
                     }`}
                   >
                     {tag}
@@ -1101,23 +1127,28 @@ Powered by RDEP
 
 
   {/* Totals */}
-  <div className="mt-4 space-y-1.5 border-t border-dashed pt-4">
+  <div className="mt-4 space-y-2 border-t border-dashed border-[#d9ccb0] pt-4">
 
-    <div className="flex justify-between text-xs font-medium text-gray-500">
+    <div className="flex justify-between text-xs font-medium text-[#8f7f58]">
       <span>Subtotal</span>
-      <span>₹{currentReceipt.subtotal.toFixed(2)}</span>
+      <span>S${currentReceipt.subtotal.toFixed(2)}</span>
     </div>
 
-    <div className="flex justify-between text-xs font-medium text-gray-500">
-      <span>GST (3%)</span>
-      <span>₹{currentReceipt.tax.toFixed(2)}</span>
+    <div className="flex justify-between text-xs font-medium text-[#8f7f58]">
+      <span>GST (9%)</span>
+      <span>S${currentReceipt.tax.toFixed(2)}</span>
     </div>
 
-    <div className="flex justify-between text-base font-bold border-t border-gray-100 pt-2 mt-1">
-      <span className="text-gray-900">Total Paid</span>
-      <span className="text-[#CE187D]">
-        ₹{currentReceipt.total.toFixed(2)}
+    <div className="flex justify-between text-base font-bold border-t border-[#eee5cf] pt-2 mt-1">
+
+      <span className="text-[#4f4123]">
+        Total Paid
       </span>
+
+      <span className="text-[#887345]">
+        S${currentReceipt.total.toFixed(2)}
+      </span>
+
     </div>
 
   </div>
@@ -1126,33 +1157,42 @@ Powered by RDEP
   {/* Payment */}
   <div className="pt-3">
 
-    <div className="mt-2 p-3 bg-gray-50 rounded-xl border border-gray-100">
+    <div className="mt-2 p-3 bg-[#faf7ef] rounded-[18px] border border-[#ece3cc]">
 
       <div className="flex items-center justify-between">
 
         <div className="flex items-center">
 
-          <div className="w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center mr-3 border border-gray-100">
-            <svg className="w-4 h-4 text-[#CE187D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-8 h-8 bg-white rounded-full shadow-sm flex items-center justify-center mr-3 border border-[#ece3cc]">
+
+            <svg
+              className="w-4 h-4 text-[#887345]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
               <line x1="1" y1="10" x2="23" y2="10"></line>
             </svg>
+
           </div>
 
           <div>
-            <div className="text-[11px] font-bold text-gray-900 uppercase tracking-tight">
-              UPI Payment
+
+            <div className="text-[11px] font-bold text-[#4f4123] uppercase tracking-tight">
+              Card Payment
             </div>
 
-            <div className="text-[10px] font-medium text-gray-400">
-              Paid via Google Pay
+            <div className="text-[10px] font-medium text-[#9d8b60]">
+              Paid via Visa Signature
             </div>
+
           </div>
 
         </div>
 
-        <div className="text-sm font-bold text-gray-900">
-          ₹{currentReceipt.total.toFixed(2)}
+        <div className="text-sm font-bold text-[#4f4123]">
+          S${currentReceipt.total.toFixed(2)}
         </div>
 
       </div>
