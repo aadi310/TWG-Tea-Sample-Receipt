@@ -1993,6 +1993,69 @@ Powered by RDEP
   </div>
 
 </div>
+
+          {/* Receipt Actions */}
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-3 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+
+  <div className="flex justify-center space-x-3">
+
+    {/* History */}
+    <Button
+      ref={historyButtonRef}
+      variant="ghost"
+      size="sm"
+      type="button"
+      className="flex-1 h-11 rounded-[16px] border border-[#e5dcc3] bg-[#faf7ef] text-[#887345] hover:bg-[#f5f0e3] hover:text-[#7b683d] font-medium transition-all"
+      onClick={handleTransactionHistoryOpen}
+    >
+
+      <History className="h-4 w-4 mr-1.5" />
+
+      <span className="text-xs font-semibold">
+        History
+      </span>
+
+    </Button>
+
+
+    {/* Email */}
+    <Button
+      variant="ghost"
+      size="sm"
+      type="button"
+      className="flex-1 h-11 rounded-[16px] border border-[#e5dcc3] bg-[#faf7ef] text-[#887345] hover:bg-[#f5f0e3] hover:text-[#7b683d] font-medium transition-all"
+      onClick={handleEmailReceipt}
+    >
+
+      <Mail className="h-4 w-4 mr-1.5" />
+
+      <span className="text-xs font-semibold">
+        Email
+      </span>
+
+    </Button>
+
+
+    {/* Download */}
+    <Button
+      variant="ghost"
+      size="sm"
+      type="button"
+      className="flex-1 h-11 rounded-[16px] border border-[#e5dcc3] bg-[#faf7ef] text-[#887345] hover:bg-[#f5f0e3] hover:text-[#7b683d] font-medium transition-all"
+      onClick={handleDownloadReceipt}
+    >
+
+      <Download className="h-4 w-4 mr-1.5" />
+
+      <span className="text-xs font-semibold">
+        Download
+      </span>
+
+    </Button>
+
+  </div>
+
+</div>
           
           {/* Need Help */}
 <div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
