@@ -1444,7 +1444,7 @@ Powered by RDEP
 
       <div className="w-8 h-8 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mr-3 flex-shrink-0">
 
-        <ShoppingBag className="h-4 w-4 text-[#887345]" />
+        <ShoppingBagIcon className="h-4 w-4 text-[#887345]" />
 
       </div>
 
