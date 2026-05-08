@@ -39,27 +39,31 @@ interface Receipt {
   time: string
   associate: string
   branch: string
+  currency: string
   items: Array<{
     id: number
     name: string
     description: string
     price: number
     quantity: number
-    category?: string
-    itemCode?: string
-    purity?: string
-    metalColor?: string
-    netWeight?: number
-    makingCharges?: number
-    stoneValue?: number
-    goldValue?: number
-    tax?: number
+
+    // Product Details
+    skuId: string
+    teaType: string
+    collection: string
+    flavour: string
+    packaging: string
+    size: string
+
+    // Optional Product Tags
+    origin?: string
+    caffeineLevel?: string
+    limitedEdition?: boolean
   }>
   subtotal: number
   tax: number
   total: number
 }
-
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [showTerms, setShowTerms] = useState(false)
@@ -145,142 +149,183 @@ export default function Home() {
     })
   }, [promoApi])
 
-  const receipts = {
+const receipts = {
 
   current: {
-    id: "MAL-SND-72819341",
-    date: "12-11-2025",
-    time: "18:42:11",
-    associate: "Anjali Mehta",
-    branch: "Malabar Gold & Diamonds Sendhwa",
+    id: "TWG-SG-95018472",
+    date: "05-05-2026",
+    time: "16:28:14",
+    associate: "Charlotte Lim",
+    branch: "TWG Tea Salon & Boutique Marina Bay Sands",
+    currency: "SGD",
+
     items: [
       {
         id: 0,
-        name: "Stately Viridescent Generic Gold Necklace",
-        description: "22Kt gold necklace with classic yellow gold finish",
-        price: 81998,
+        name: "Grand Malawi",
+        description: "Single estate blue tea with bright citrus undertones",
+        price: 127,
         quantity: 1,
-        category: "Necklace",
-        itemCode: "NK-290635",
-        purity: "22Kt",
-        netWeight: "4.82g",
-        metalColor: "Gold",
-        goldValue: 68100.76,
-        makingCharges: 11509.03,
-        tax: 2388.29
+
+        skuId: "TCTWG9069",
+        teaType: "Blue Tea / Oolong",
+        collection: "Single Estate Tea",
+        flavour: "Citrus",
+        packaging: "Packaged Loose Leaf Tea",
+        size: "100g pack"
       },
       {
         id: 1,
-        name: "Avant-garde Gold Earrings",
-        description: "18Kt pink gold earrings with cubic zirconia stones",
-        price: 44036,
+        name: "Moroccan Mint Tea",
+        description: "Refreshing green tea blended with vibrant mint notes",
+        price: 58,
         quantity: 1,
-        category: "Earrings",
-        itemCode: "ER-083113",
-        purity: "18Kt",
-        metalColor: "Pink",
-        netWeight: 2.92,
-        goldValue: 33734.76,
-        stoneValue: 248,
-        makingCharges: 8771.04,
-        tax: 1282.61
+
+        skuId: "TCTWG9205",
+        teaType: "Green Tea",
+        collection: "Grand Classic Tea",
+        flavour: "Mint",
+        packaging: "Tea Bags",
+        size: "15 bags"
+      },
+      {
+        id: 2,
+        name: "Jardin Vendôme Teabag",
+        description: "Elegant floral green tea blend in handcrafted tea bags",
+        price: 30,
+        quantity: 2,
+
+        skuId: "PACKTBEX002",
+        teaType: "Green Tea",
+        collection: "Exclusive Tea Blend",
+        flavour: "Floral",
+        packaging: "Tea Bags",
+        size: "15 bags"
       }
     ],
-    subtotal: 120463.59,
-    tax: 3670.90,
-    total: 126034
+
+    subtotal: 245,
+    tax: 22.05,
+    total: 267.05
   },
 
   hist1: {
-    id: "MAL-SND-72819322",
-    date: "02-11-2025",
-    time: "15:14:52",
-    associate: "Rohit Nair",
-    branch: "Malabar Gold & Diamonds Sendhwa",
+    id: "TWG-SG-95018421",
+    date: "22-04-2026",
+    time: "13:12:47",
+    associate: "Ethan Koh",
+    branch: "TWG Tea Takashimaya Shopping Centre",
+    currency: "SGD",
+
     items: [
       {
         id: 0,
-        name: "Plush Diamond Pendant",
-        description: "18Kt rose gold pendant with VVS-VS GH diamonds",
-        price: 36377,
+        name: "Ritzy Earl Grey",
+        description: "Sophisticated black tea infused with citrus bergamot",
+        price: 48,
         quantity: 1,
-        category: "Pendant",
-        itemCode: "PD-200173",
-        purity: "18Kt",
-        metalColor: "Rose Gold",
-        netWeight: 2.166,
-        goldValue: 25023.8,
-        stoneValue: 4337.4,
-        makingCharges: 5956.5,
-        tax: 1059.53
+
+        skuId: "TCTWG9089",
+        teaType: "Black Tea",
+        collection: "Packaged Loose Leaf Teas",
+        flavour: "Citrus",
+        packaging: "Loose Leaf Tea",
+        size: "100g pack"
       },
       {
         id: 1,
-        name: "Everyday Luxury Gold Necklace",
-        description: "22Kt matte finish yellow gold necklace",
-        price: 142744,
-        quantity: 1,
-        category: "Necklace",
-        itemCode: "NK-284618",
-        purity: "22Kt",
-        metalColor: "Yellow",
-        netWeight: 8.396,
-        goldValue: 118551.52,
-        makingCharges: 20035.21,
-        tax: 4157.6
+        name: "Longevity Tea",
+        description: "Delicate white tea blend with floral mineral finish",
+        price: 17,
+        quantity: 2,
+
+        skuId: "TCTWG4048M",
+        teaType: "White Tea",
+        collection: "Exclusive Tea Blend",
+        flavour: "Floral, Mineral",
+        packaging: "Packaged Loose Leaf Tea",
+        size: "10g pack"
       }
     ],
-    subtotal: 173567.02,
-    tax: 5217.13,
-    total: 179121
+
+    subtotal: 82,
+    tax: 7.38,
+    total: 89.38
   },
 
   hist2: {
-    id: "MAL-SND-72819284",
-    date: "26-10-2025",
-    time: "12:32:09",
-    associate: "Priya Shah",
-    branch: "Malabar Gold & Diamonds Sendhwa",
+    id: "TWG-SG-95018376",
+    date: "11-04-2026",
+    time: "18:45:03",
+    associate: "Olivia Tan",
+    branch: "TWG Tea Raffles City",
+    currency: "SGD",
+
     items: [
       {
         id: 0,
-        name: "Ethereal Gold Mangalsutra",
-        description: "22Kt yellow gold mangalsutra with black beads and kundan",
-        price: 255062,
+        name: "Mate",
+        description: "Herbal infusion with earthy vegetal character",
+        price: 10,
+        quantity: 3,
+
+        skuId: "T8101",
+        teaType: "Herbal Tea",
+        collection: "Loose Leaf Tea",
+        flavour: "Herbaceous And Vegetal",
+        packaging: "Loose Leaf Tea",
+        size: "50g pack"
+      },
+      {
+        id: 1,
+        name: "Sapitwa Cloud Tea",
+        description: "Malty single estate blue tea with smooth depth",
+        price: 42,
         quantity: 1,
-        category: "Mangalsutra",
-        itemCode: "MS-279084",
-        purity: "22Kt",
-        metalColor: "Yellow",
-        netWeight: 14.288,
-        goldValue: 201746.56,
-        stoneValue: 1704.01,
-        makingCharges: 44182.5,
-        tax: 7428.99
+
+        skuId: "T1007",
+        teaType: "Blue Tea / Oolong",
+        collection: "Single Estate Tea",
+        flavour: "Malty",
+        packaging: "Loose Leaf Tea",
+        size: "50g pack"
       }
     ],
-    subtotal: 247633.07,
-    tax: 7428.99,
-    total: 255062
+
+    subtotal: 72,
+    tax: 6.48,
+    total: 78.48
   }
 
 };
 
-  const currentReceipt = receipts[currentReceiptId]
+const currentReceipt = receipts[currentReceiptId]
 
-  const totalSlides = 2
+const totalSlides = 2
 
-  const transactionHistory = [
-    {
-      id: "current",
-      date: "07-11-2025",
-      branch: "Malabar - MG Road, Bangalore",
-      amount: currentReceiptId === "current" ? receipts.current.subtotal + receipts.current.tax : 126034.00,
-    },
-    { id: "hist1", date: "20-10-2025", branch: "Malabar - MG Road, Bangalore", amount: 179121.00 },
-    { id: "hist2", date: "15-10-2025", branch: "Malabar - MG Road, Bangalore", amount: 255062.00 },
-  ]
-
+const transactionHistory = [
+  {
+    id: "current",
+    date: "05-05-2026",
+    branch: "TWG Tea Marina Bay Sands",
+    amount: currentReceiptId === "current"
+      ? receipts.current.subtotal + receipts.current.tax
+      : 267.05,
+  },
+  {
+    id: "hist1",
+    date: "22-04-2026",
+    branch: "TWG Tea Takashimaya",
+    amount: 89.38,
+  },
+  {
+    id: "hist2",
+    date: "11-04-2026",
+    branch: "TWG Tea Raffles City",
+    amount: 78.48,
+  },
+]
+  
   const toggleProductExpansion = (productId: number) => {
     setExpandedProducts((prev) =>
       prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId],
