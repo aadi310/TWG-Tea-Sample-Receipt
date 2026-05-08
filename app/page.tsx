@@ -919,7 +919,7 @@ Powered by RDEP
 
     <h3 className="text-base font-semibold flex items-center text-[#5f4f2c]">
 
-      <ShoppingBag className="mr-2 h-4 w-4 text-[#887345]" />
+      <ShoppingBagIcon className="mr-2 h-4 w-4 text-[#887345]" />
 
       Purchase Details
 
