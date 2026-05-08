@@ -82,6 +82,7 @@ export default function Home() {
   const [showStoreLocation, setShowStoreLocation] = useState(false)
   const receiptContainerRef = useRef<HTMLDivElement>(null)
   const [expandedItemFeedback, setExpandedItemFeedback] = useState([]) 
+  const [copiedCoupon, setCopiedCoupon] = useState<string | null>(null)
   const [itemFeedback, setItemFeedback] = useState({})
   const [feedback, setFeedback] = useState({
     service: 0,
@@ -1836,7 +1837,15 @@ Powered by RDEP
     {/* Coupon 1 */}
     <button
       onClick={() => {
+
         navigator.clipboard.writeText("TEATIME15")
+
+        setCopiedCoupon("TEATIME15")
+
+        setTimeout(() => {
+          setCopiedCoupon(null)
+        }, 2000)
+
       }}
       className="w-full text-left group"
     >
@@ -1876,12 +1885,16 @@ Powered by RDEP
 
             <div className="w-10 h-10 rounded-full bg-[#887345] flex items-center justify-center mb-1">
 
-              <Copy className="h-4 w-4 text-white" />
+              {copiedCoupon === "TEATIME15" ? (
+                <Check className="h-4 w-4 text-white" />
+              ) : (
+                <Copy className="h-4 w-4 text-white" />
+              )}
 
             </div>
 
             <div className="text-[10px] font-semibold text-[#887345]">
-              Tap to Copy
+              {copiedCoupon === "TEATIME15" ? "Copied!" : "Tap to Copy"}
             </div>
 
           </div>
@@ -1896,7 +1909,15 @@ Powered by RDEP
     {/* Coupon 2 */}
     <button
       onClick={() => {
+
         navigator.clipboard.writeText("TWGGIFT25")
+
+        setCopiedCoupon("TWGGIFT25")
+
+        setTimeout(() => {
+          setCopiedCoupon(null)
+        }, 2000)
+
       }}
       className="w-full text-left group"
     >
@@ -1936,12 +1957,16 @@ Powered by RDEP
 
             <div className="w-10 h-10 rounded-full bg-[#887345] flex items-center justify-center mb-1">
 
-              <Copy className="h-4 w-4 text-white" />
+              {copiedCoupon === "TWGGIFT25" ? (
+                <Check className="h-4 w-4 text-white" />
+              ) : (
+                <Copy className="h-4 w-4 text-white" />
+              )}
 
             </div>
 
             <div className="text-[10px] font-semibold text-[#887345]">
-              Tap to Copy
+              {copiedCoupon === "TWGGIFT25" ? "Copied!" : "Tap to Copy"}
             </div>
 
           </div>
@@ -1964,44 +1989,6 @@ Powered by RDEP
 
   </div>
 
-</div>
-          
-         {/* Receipt Actions */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins shadow-sm">
-  <div className="flex justify-center space-x-4">
-
-    <Button
-      ref={historyButtonRef}
-      variant="ghost"
-      size="sm"
-      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
-      onClick={handleTransactionHistoryOpen}
-    >
-      <History className="h-4 w-4 mr-1" />
-      <span className="text-xs">History</span>
-    </Button>
-
-    <Button
-      variant="ghost"
-      size="sm"
-      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
-      onClick={handleEmailReceipt}
-    >
-      <Mail className="h-4 w-4 mr-1" />
-      <span className="text-xs">Email</span>
-    </Button>
-
-    <Button
-      variant="ghost"
-      size="sm"
-      className="text-[#CE187D] hover:bg-[#F7F2F5] font-medium"
-      onClick={handleDownloadReceipt}
-    >
-      <Download className="h-4 w-4 mr-1" />
-      <span className="text-xs">Download</span>
-    </Button>
-
-  </div>
 </div>
           
           {/* Need Help */}
