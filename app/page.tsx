@@ -821,60 +821,53 @@ Powered by RDEP
 <div className="rounded-[22px] border border-[#e5dcc3] mt-3 font-poppins overflow-hidden bg-white shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
 
   {/* Premium Header */}
-  <div className="bg-[#8a7642] px-5 py-5">
+  <div className="bg-[#887345] px-5 pt-5 pb-4">
 
     <div className="flex items-start justify-between">
 
-      {/* Left Side */}
-      <div className="flex flex-col justify-between h-[140px]">
+      {/* Logo */}
+      <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 border border-[#cdbb87] shadow-sm inline-flex">
+        <img
+          src="/images/design-mode/twg_oval.png"
+          alt="TWG Tea"
+          className="h-12 w-auto object-contain"
+        />
+      </div>
 
-        {/* Logo */}
-        <div className="bg-[#ede7cf] rounded-2xl px-4 py-3 inline-flex border border-[#cdbb87] shadow-sm w-fit">
-          <img
-            src="/images/design-mode/twg_oval.png"
-            alt="TWG Tea"
-            className="h-12 w-auto object-contain"
-          />
-        </div>
+      {/* QR */}
+      <div className="bg-[#9a8450] p-2.5 rounded-xl border border-[#b39a63]">
+        <Image
+          src="/images/design-mode/qr-code.jpg"
+          alt="Scan QR"
+          width={62}
+          height={62}
+          className="object-contain rounded-md"
+        />
+      </div>
 
-        {/* Welcome Card */}
-        <div className="bg-[#a18b52] px-5 py-3 rounded-full flex items-center border border-[#c4ad72] min-w-[290px]">
+    </div>
 
-          <User2 className="h-5 w-5 mr-3 text-[#f6f1df]" />
+    {/* Greeting + Total */}
+    <div className="flex items-center justify-between mt-5">
 
-          <span className="text-[15px] font-medium text-[#fffdf6]">
-            Welcome, {customerName}
-          </span>
+      <div className="bg-[#9a8450] px-5 py-2.5 rounded-full flex items-center border border-[#b39a63]">
 
-        </div>
+        <User2 className="h-4 w-4 mr-2 text-[#ede7cf]" />
+
+        <span className="text-sm font-medium text-[#f6f1df]">
+          Welcome, {customerName}
+        </span>
 
       </div>
 
-      {/* Right Side */}
-      <div className="flex flex-col justify-between items-end h-[140px]">
+      <div className="bg-[#f8f4e8] px-5 py-3 rounded-2xl text-right border border-[#d8ccaa] min-w-[165px]">
 
-        {/* QR */}
-        <div className="bg-[#9b8750] p-2.5 rounded-2xl border border-[#bca36a] shadow-sm">
-          <Image
-            src="/images/design-mode/qr-code.jpg"
-            alt="Scan QR"
-            width={62}
-            height={62}
-            className="object-contain rounded-md"
-          />
+        <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
+          Total Paid
         </div>
 
-        {/* Total Paid */}
-        <div className="bg-[#f8f4e8] px-6 py-3 rounded-[22px] text-right border border-[#d8ccaa] shadow-sm min-w-[190px]">
-
-          <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
-            Total Paid
-          </div>
-
-          <div className="text-[18px] leading-none font-semibold text-[#5f4f2c] mt-2">
-            S${currentReceipt.total.toFixed(2)}
-          </div>
-
+        <div className="text-xl font-semibold text-[#5f4f2c] mt-0.5">
+          S${currentReceipt.total.toFixed(2)}
         </div>
 
       </div>
@@ -884,34 +877,32 @@ Powered by RDEP
   </div>
 
   {/* Receipt Info Section */}
-  <div className="grid grid-cols-2 gap-4 p-4 bg-[#f6f2e8]">
+  <div className="grid grid-cols-2 gap-4 p-4 bg-[#f8f5ea]">
 
-    <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
+    <div className="bg-white p-3.5 rounded-2xl border border-[#e6dcc0]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
         Receipt ID
       </div>
 
-      <div className="text-[15px] font-semibold text-[#5f4f2c] mt-2 tracking-[0.02em]">
+      <div className="text-xs font-mono font-semibold text-[#5f4f2c] mt-1">
         {currentReceipt.id}
       </div>
 
     </div>
 
-    <div className="bg-[#fbfaf7] p-4 rounded-[22px] border border-[#e2d6b5]">
+    <div className="bg-white p-3.5 rounded-2xl border border-[#e6dcc0]">
 
       <div className="text-[10px] text-[#a39267] uppercase font-semibold tracking-[0.22em]">
         Date & Time
       </div>
 
-      <div className="text-[15px] font-medium text-[#5f4f2c] mt-2 flex items-center">
+      <div className="text-xs font-medium text-[#5f4f2c] mt-1">
+        {currentReceipt.date}
 
-        <span>{currentReceipt.date}</span>
+        <span className="text-[#d2c5a0] mx-1.5">•</span>
 
-        <span className="text-[#cab98d] mx-2 text-xs">•</span>
-
-        <span>{currentReceipt.time}</span>
-
+        {currentReceipt.time}
       </div>
 
     </div>
