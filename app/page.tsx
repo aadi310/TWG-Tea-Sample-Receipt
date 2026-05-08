@@ -1273,29 +1273,6 @@ Powered by RDEP
       </div>
 
 
-      {/* Experience Tags */}
-      <div className="flex flex-wrap justify-center gap-2">
-
-        {[
-          "Excellent Service",
-          "Premium Quality",
-          "Beautiful Packaging",
-          "Fresh Aroma",
-          "Great Ambience"
-        ].map((tag) => (
-
-          <button
-            key={tag}
-            className="text-[10px] px-3 py-1.5 rounded-full border border-[#d8ccaa] text-[#7a6a45] bg-[#faf7ef]"
-          >
-            {tag}
-          </button>
-
-        ))}
-
-      </div>
-
-
       {/* Feedback Text */}
       <div className="space-y-2">
 
@@ -1525,7 +1502,8 @@ Powered by RDEP
 </div>
           
           {/* Full Width Banner Section */}
-<div className="bg-white rounded-lg border border-gray-200 overflow-hidden font-poppins relative">
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] overflow-hidden font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+
   <Carousel
     className="w-full"
     setApi={setPromoApi}
@@ -1533,100 +1511,116 @@ Powered by RDEP
       loop: true,
     }}
   >
+
     <CarouselContent>
 
       {/* Banner 1 */}
       <CarouselItem>
+
         <a
-          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list.html?search=tanvika"
+          href="https://twgtea.com/sg/en/world-of-twg/a-world-of-first/a-world-of-firsts-sencha-matcha"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative w-full aspect-[1440/650]">
+
+          <div className="relative w-full aspect-[1451/631]">
+
             <Image
-              src="/images/design-mode/malabar-banner-1.png"
-              alt="Malabar Tanvika Collection"
+              src="/images/design-mode/twg-banner-1.png"
+              alt="TWG Tea Sencha Matcha Collection"
               fill
               className="object-cover"
               priority
             />
+
           </div>
+
         </a>
+
       </CarouselItem>
+
 
       {/* Banner 2 */}
       <CarouselItem>
-        <a
-          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list/necklace.html?malabar_category=2076&malabar_product_type=72"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="relative w-full aspect-[1440/650]">
-            <Image
-              src="/images/design-mode/malabar-banner-2.png"
-              alt="Malabar Necklace Collection"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </a>
-      </CarouselItem>
 
-      {/* Banner 3 */}
-      <CarouselItem>
         <a
-          href="https://www.malabargoldanddiamonds.com/in/pan-india/en/product-list.html?malabar_category=2076"
+          href="https://twgtea.com/sg/en/world-of-twg/a-world-of-first/a-whimsical-treat-with-twg-tea-teddies"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative w-full aspect-[1440/650]">
+
+          <div className="relative w-full aspect-[1451/631]">
+
             <Image
-              src="/images/design-mode/malabar-banner-3.png"
-              alt="Malabar Jewellery Collection"
+              src="/images/design-mode/twg-banner-2.png"
+              alt="TWG Tea Teddies Collection"
               fill
               className="object-cover"
             />
+
           </div>
+
         </a>
+
       </CarouselItem>
 
     </CarouselContent>
 
+
     {/* Dots Navigation */}
-    <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
-      {[0, 1, 2].map((index) => (
+    <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+
+      {[0, 1].map((index) => (
+
         <button
           key={index}
           onClick={() => promoApi?.scrollTo(index)}
           className={`h-1.5 rounded-full transition-all duration-300 ${
-            currentSlide === index ? "w-5 bg-[#D4AF37]" : "w-1.5 bg-gray-300"
+            currentSlide === index
+              ? "w-5 bg-[#ede7cf]"
+              : "w-1.5 bg-[#d8ccaa]/70"
           }`}
         />
+
       ))}
+
     </div>
 
   </Carousel>
+
 </div>
           
          {/* Profile Update Section */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
   {profileUpdateSuccess ? (
 
-    <div className="text-center py-4 bg-[#F7F2F5] rounded-xl border border-[#ecd9e4]">
+    <div className="text-center py-5 bg-[#faf7ef] rounded-[20px] border border-[#ece3cc]">
 
-      <div className="w-12 h-12 bg-[#CE187D]/10 rounded-full flex items-center justify-center mx-auto mb-3">
-        <svg className="w-6 h-6 text-[#CE187D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
+      <div className="w-12 h-12 bg-[#887345] rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm">
+
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2.5"
+            d="M5 13l4 4L19 7"
+          />
         </svg>
+
       </div>
 
-      <div className="text-sm font-bold text-[#682A49] mb-1">
+      <div className="text-sm font-bold text-[#5f4f2c] mb-1">
         Profile Updated Successfully
       </div>
 
-      <div className="text-[11px] font-semibold text-[#CE187D] uppercase tracking-wider">
-        +100 Loyalty Points Added
+      <div className="text-[11px] font-semibold text-[#887345] uppercase tracking-[0.18em]">
+        Membership Details Synced
       </div>
 
     </div>
@@ -1634,44 +1628,73 @@ Powered by RDEP
   ) : (
 
     <>
+
+      {/* Header */}
       <div className="flex items-center justify-between mb-4">
 
-        <h3 className="text-base font-semibold text-[#682A49] flex items-center">
+        <h3 className="text-base font-semibold text-[#5f4f2c] flex items-center">
 
-          <div className="bg-[#CE187D] p-1.5 rounded-lg mr-2.5">
+          <div className="bg-[#887345] p-1.5 rounded-xl mr-2.5">
+
             <User2 className="h-4 w-4 text-white" />
+
           </div>
 
-          Complete Your Profile
+          Complete Your Membership Profile
 
         </h3>
 
-        <Badge className="text-[10px] font-bold bg-[#CE187D] text-white hover:bg-[#C92C83] border-none px-2 py-0.5">
-          +100 PTS
+        <Badge className="text-[10px] font-semibold bg-[#faf7ef] text-[#887345] border border-[#d8ccaa] hover:bg-[#f5f0e3] px-2 py-0.5 shadow-none">
+          MYTWG
         </Badge>
 
       </div>
 
+
+      {/* Description */}
+      <div className="text-[11px] text-[#8f7f58] leading-relaxed mb-4">
+        Keep your membership information updated to enjoy a seamless TWG Tea experience across participating boutiques and online purchases.
+      </div>
+
+
       <div className="space-y-4">
 
+        {/* Row */}
         <div className="grid grid-cols-2 gap-3">
 
+          {/* Mobile */}
           <div className="space-y-1.5">
-            <Label htmlFor="mobile" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
+
+            <Label
+              htmlFor="mobile"
+              className="text-[11px] font-bold text-[#9d8b60] uppercase tracking-[0.12em] ml-1"
+            >
               Mobile Number
             </Label>
 
             <Input
               id="mobile"
-              placeholder="+91 9XXXXXXXXX"
+              placeholder="+65 XXXXXXXX"
               value={profile.mobile}
-              onChange={(e) => setProfile((prev) => ({ ...prev, mobile: e.target.value }))}
-              className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
+              onChange={(e) =>
+                setProfile((prev) => ({
+                  ...prev,
+                  mobile: e.target.value,
+                }))
+              }
+              className="h-11 text-xs border-[#e5dcc3] bg-[#fffdfa] focus:border-[#887345] focus:ring-[#887345] rounded-[16px] text-[#5f4f2c] placeholder:text-[#b8ab84]"
             />
+
           </div>
 
+
+          {/* Name */}
           <div className="space-y-1.5">
-            <Label htmlFor="name" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
+
+            <Label
+              htmlFor="name"
+              className="text-[11px] font-bold text-[#9d8b60] uppercase tracking-[0.12em] ml-1"
+            >
               Full Name
             </Label>
 
@@ -1679,16 +1702,27 @@ Powered by RDEP
               id="name"
               placeholder="Your Full Name"
               value={profile.name}
-              onChange={(e) => setProfile((prev) => ({ ...prev, name: e.target.value }))}
-              className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
+              onChange={(e) =>
+                setProfile((prev) => ({
+                  ...prev,
+                  name: e.target.value,
+                }))
+              }
+              className="h-11 text-xs border-[#e5dcc3] bg-[#fffdfa] focus:border-[#887345] focus:ring-[#887345] rounded-[16px] text-[#5f4f2c] placeholder:text-[#b8ab84]"
             />
+
           </div>
 
         </div>
 
+
+        {/* Email */}
         <div className="space-y-1.5">
 
-          <Label htmlFor="email" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
+          <Label
+            htmlFor="email"
+            className="text-[11px] font-bold text-[#9d8b60] uppercase tracking-[0.12em] ml-1"
+          >
             Email Address
           </Label>
 
@@ -1697,42 +1731,71 @@ Powered by RDEP
             type="email"
             placeholder="name@example.com"
             value={profile.email}
-            onChange={(e) => setProfile((prev) => ({ ...prev, email: e.target.value }))}
-            className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] focus:ring-[#C92C83] rounded-lg"
+            onChange={(e) =>
+              setProfile((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }))
+            }
+            className="h-11 text-xs border-[#e5dcc3] bg-[#fffdfa] focus:border-[#887345] focus:ring-[#887345] rounded-[16px] text-[#5f4f2c] placeholder:text-[#b8ab84]"
           />
 
         </div>
 
+
+        {/* Gender */}
         <div className="space-y-1.5">
 
-          <Label htmlFor="gender" className="text-[11px] font-bold text-gray-400 uppercase tracking-tight ml-1">
+          <Label
+            htmlFor="gender"
+            className="text-[11px] font-bold text-[#9d8b60] uppercase tracking-[0.12em] ml-1"
+          >
             Gender
           </Label>
 
           <Select
             value={profile.gender}
-            onValueChange={(value) => setProfile((prev) => ({ ...prev, gender: value }))}
+            onValueChange={(value) =>
+              setProfile((prev) => ({
+                ...prev,
+                gender: value,
+              }))
+            }
           >
 
-            <SelectTrigger className="h-10 text-xs border-[#ecd9e4] focus:border-[#C92C83] rounded-lg">
+            <SelectTrigger className="h-11 text-xs border-[#e5dcc3] bg-[#fffdfa] focus:border-[#887345] rounded-[16px] text-[#5f4f2c]">
+
               <SelectValue placeholder="Select gender" />
+
             </SelectTrigger>
 
             <SelectContent>
-              <SelectItem value="male" className="text-xs">Male</SelectItem>
-              <SelectItem value="female" className="text-xs">Female</SelectItem>
-              <SelectItem value="other" className="text-xs">Other</SelectItem>
+
+              <SelectItem value="male" className="text-xs">
+                Male
+              </SelectItem>
+
+              <SelectItem value="female" className="text-xs">
+                Female
+              </SelectItem>
+
+              <SelectItem value="other" className="text-xs">
+                Other
+              </SelectItem>
+
             </SelectContent>
 
           </Select>
 
         </div>
 
+
+        {/* Button */}
         <Button
-          className="w-full bg-gradient-to-r from-[#CE187D] to-[#682A49] hover:opacity-90 text-white h-11 text-xs font-bold rounded-xl shadow-lg shadow-pink-100 transition-all active:scale-[0.98]"
+          className="w-full bg-[#887345] hover:bg-[#7b683d] text-white h-11 text-xs font-bold rounded-[18px] transition-all active:scale-[0.98]"
           onClick={handleProfileUpdate}
         >
-          Update Profile & Earn 100 Points
+          Update Membership Profile
         </Button>
 
       </div>
