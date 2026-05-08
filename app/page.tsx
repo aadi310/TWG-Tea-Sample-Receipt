@@ -860,17 +860,17 @@ Powered by RDEP
 
       </div>
 
-      <div className="bg-[#f8f4e8] px-5 py-3 rounded-2xl text-right border border-[#d8ccaa] min-w-[165px]">
+     <div className="bg-[#f8f4e8] px-4 py-3 rounded-2xl text-right border border-[#d8ccaa] min-w-[145px]">
 
-        <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
-          Total Paid
-        </div>
+  <div className="text-[10px] font-semibold text-[#887345] uppercase tracking-[0.24em]">
+    Total Paid
+  </div>
 
-        <div className="text-xl font-semibold text-[#5f4f2c] mt-0.5">
-          S${currentReceipt.total.toFixed(2)}
-        </div>
+  <div className="text-xl font-semibold text-[#5f4f2c] mt-0.5">
+    S${currentReceipt.total.toFixed(2)}
+  </div>
 
-      </div>
+</div>
 
     </div>
 
