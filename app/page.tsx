@@ -1995,42 +1995,122 @@ Powered by RDEP
 </div>
           
           {/* Need Help */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-3 font-poppins shadow-sm">
-  <h3 className="text-sm font-semibold text-[#682A49] mb-3 flex items-center">
-    <Send className="mr-2 h-4 w-4 text-[#CE187D]" />
-    Need Help?
-  </h3>
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
-  <div className="grid grid-cols-3 gap-2">
+  {/* Header */}
+  <div className="flex items-center justify-between mb-4">
 
-    {/* WhatsApp / Chat */}
+    <h3 className="text-base font-semibold text-[#5f4f2c] flex items-center">
+
+      <div className="w-8 h-8 rounded-full bg-[#faf7ef] border border-[#e5dcc3] flex items-center justify-center mr-2.5">
+
+        <Send className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      Need Assistance?
+
+    </h3>
+
+    <span className="text-[10px] font-bold text-[#887345] uppercase tracking-[0.14em]">
+      TWG SUPPORT
+    </span>
+
+  </div>
+
+
+  {/* Description */}
+  <div className="text-[11px] text-[#8f7f58] leading-relaxed mb-4">
+    Our TWG Tea Concierge team is available to assist with boutique purchases, tea collections, gifting enquiries and membership support.
+  </div>
+
+
+  {/* Support Options */}
+  <div className="grid grid-cols-3 gap-2.5">
+
+    {/* Chat */}
     <button
       onClick={handleWhatsApp}
-      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
+      type="button"
+      className="bg-[#faf7ef] border border-[#e5dcc3] rounded-[18px] p-3 flex flex-col items-center transition-all hover:bg-[#f5f0e3] active:scale-[0.98] group"
     >
-      <MessageSquare className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
-      <span className="text-[11px] font-medium text-gray-700">Chat</span>
+
+      <div className="w-10 h-10 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mb-2 transition-colors">
+
+        <MessageSquare className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <span className="text-[11px] font-semibold text-[#5f4f2c]">
+        Chat
+      </span>
+
+      <span className="text-[10px] text-[#9d8b60] mt-0.5">
+        Live Help
+      </span>
+
     </button>
 
-    {/* Call Support */}
+
+    {/* Call */}
     <button
       onClick={handleCall}
-      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
+      type="button"
+      className="bg-[#faf7ef] border border-[#e5dcc3] rounded-[18px] p-3 flex flex-col items-center transition-all hover:bg-[#f5f0e3] active:scale-[0.98] group"
     >
-      <Phone className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
-      <span className="text-[11px] font-medium text-gray-700">Call</span>
+
+      <div className="w-10 h-10 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mb-2">
+
+        <Phone className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <span className="text-[11px] font-semibold text-[#5f4f2c]">
+        Call
+      </span>
+
+      <span className="text-[10px] text-[#9d8b60] mt-0.5">
+        Boutique
+      </span>
+
     </button>
 
-    {/* Email Support */}
+
+    {/* Email */}
     <button
       onClick={handleEmail}
-      className="bg-[#F7F2F5] border border-[#ecd9e4] rounded-lg p-2 flex flex-col items-center hover:bg-[#F1E6EC] transition-colors group"
+      type="button"
+      className="bg-[#faf7ef] border border-[#e5dcc3] rounded-[18px] p-3 flex flex-col items-center transition-all hover:bg-[#f5f0e3] active:scale-[0.98] group"
     >
-      <Mail className="h-4 w-4 text-gray-600 group-hover:text-[#CE187D] mb-1" />
-      <span className="text-[11px] font-medium text-gray-700">Email</span>
+
+      <div className="w-10 h-10 rounded-full bg-white border border-[#e5dcc3] flex items-center justify-center mb-2">
+
+        <Mail className="h-4 w-4 text-[#887345]" />
+
+      </div>
+
+      <span className="text-[11px] font-semibold text-[#5f4f2c]">
+        Email
+      </span>
+
+      <span className="text-[10px] text-[#9d8b60] mt-0.5">
+        Concierge
+      </span>
+
     </button>
 
   </div>
+
+
+  {/* Footer */}
+  <div className="mt-4 pt-4 border-t border-dashed border-[#ddd2b5]">
+
+    <div className="text-[10px] text-center text-[#9d8b60] leading-relaxed">
+      Support availability may vary across participating TWG Tea boutiques and regions.
+    </div>
+
+  </div>
+
 </div>
           
       {/* Social Media & Store Address */}
