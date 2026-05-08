@@ -104,7 +104,7 @@ export default function Home() {
   const [rating, setRating] = useState(0)
   const [feedbackText, setFeedbackText] = useState("")
 
-  const customerName = "Deepak"
+  const customerName = "Wong"
 
   // Carousel refs and APIs
   const [promoApi, setPromoApi] = useState<CarouselApi>()
@@ -461,7 +461,7 @@ const transactionHistory = [
   }
 
   const handleEmailReceipt = () => {
-    window.open(`mailto:?subject=Receipt from Malabar Gold & Diamonds&body=Receipt ID: ${currentReceipt.id}`)
+    window.open(`mailto:?subject=Receipt from TWG Tea Singapore&body=Receipt ID: ${currentReceipt.id}`)
   }
 
   const handleDownloadReceipt = () => {
@@ -470,21 +470,25 @@ const transactionHistory = [
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Malabar Gold & Diamonds Receipt</title>
+<title>TWG Tea Receipt</title>
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
 font-size:14px;
 line-height:1.4;
-color:#000;
-background:#fff;
+color:#4f4123;
+background:#fffdfa;
 width:800px;
 margin:0 auto;
-padding:20px;
+padding:24px;
 }
 
 /* HEADER */
@@ -493,60 +497,62 @@ padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:flex-start;
-margin-bottom:30px;
+margin-bottom:28px;
 padding-bottom:20px;
-border-bottom:3px solid #CE187D;
+border-bottom:3px solid #887345;
 }
 
 .company-info h1{
-font-size:30px;
-color:#682A49;
+font-size:32px;
+color:#5f4f2c;
 font-weight:900;
-margin-bottom:6px;
+margin-bottom:8px;
+letter-spacing:0.04em;
 }
 
 .company-info p{
 font-size:12px;
-color:#444;
-line-height:1.4;
+color:#7a6a45;
+line-height:1.5;
 font-weight:500;
 }
 
 .bill-info{
 text-align:right;
 font-size:12px;
+color:#7a6a45;
 }
 
 .bill-info div{
-margin-bottom:4px;
+margin-bottom:5px;
 }
 
 .bill-id{
-font-weight:bold;
-color:#CE187D;
+font-weight:800;
+color:#887345;
 }
 
 /* CUSTOMER */
 
 .customer-section{
-background:#F7F2F5;
-padding:15px;
-margin-bottom:20px;
-border-left:4px solid #CE187D;
-border-radius:0 8px 8px 0;
+background:#faf7ef;
+padding:16px;
+margin-bottom:22px;
+border-left:5px solid #887345;
+border-radius:0 12px 12px 0;
 }
 
 .customer-section h3{
-color:#682A49;
-font-size:16px;
-margin-bottom:2px;
-font-weight:700;
+color:#5f4f2c;
+font-size:18px;
+margin-bottom:4px;
+font-weight:800;
 }
 
 .customer-section p{
 font-size:12px;
 font-weight:500;
-color:#555;
+color:#8f7f58;
 }
 
 /* TABLE */
@@ -554,36 +560,45 @@ color:#555;
 .items-table{
 width:100%;
 border-collapse:collapse;
-margin-bottom:20px;
+margin-bottom:24px;
 }
 
 .items-table th{
-background:#CE187D;
+background:#887345;
 color:white;
-padding:12px 8px;
+padding:13px 10px;
 text-align:left;
 font-size:11px;
-font-weight:bold;
+font-weight:700;
 text-transform:uppercase;
-letter-spacing:0.5px;
+letter-spacing:0.08em;
 }
 
 .items-table td{
-padding:12px 8px;
-border-bottom:1px solid #eee;
+padding:14px 10px;
+border-bottom:1px solid #ece3cc;
 font-size:12px;
 vertical-align:top;
 }
 
 .item-name{
-font-weight:700;
-margin-bottom:3px;
+font-weight:800;
+margin-bottom:4px;
 font-size:13px;
+color:#4f4123;
 }
 
 .item-desc{
 font-size:11px;
-color:#777;
+color:#8f7f58;
+line-height:1.5;
+}
+
+.item-meta{
+margin-top:6px;
+font-size:10px;
+color:#9d8b60;
+line-height:1.6;
 }
 
 /* TOTALS */
@@ -595,32 +610,39 @@ margin-bottom:25px;
 padding:0 10px;
 }
 
+.totals-left{
+font-size:13px;
+font-weight:600;
+color:#7a6a45;
+}
+
 .totals-table{
 text-align:right;
-min-width:220px;
+min-width:240px;
 }
 
 .totals-table div{
-margin-bottom:6px;
+margin-bottom:7px;
 font-size:13px;
+color:#6f603d;
 }
 
 .net-total{
-font-weight:800;
+font-weight:900;
 font-size:18px;
-color:#CE187D;
-border-top:2px solid #CE187D;
-padding-top:8px;
-margin-top:8px;
+color:#887345;
+border-top:2px solid #887345;
+padding-top:10px;
+margin-top:10px;
 }
 
 /* PAYMENT */
 
 .payment-box{
-background:#F7F2F5;
-border:1px solid #ecd9e4;
-padding:14px;
-border-radius:10px;
+background:#faf7ef;
+border:1px solid #e5dcc3;
+padding:16px;
+border-radius:14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -628,47 +650,58 @@ margin-top:10px;
 }
 
 .payment-title{
-font-weight:700;
+font-weight:800;
 font-size:13px;
-color:#333;
+color:#5f4f2c;
+letter-spacing:0.04em;
 }
 
 .payment-sub{
 font-size:11px;
-color:#777;
+color:#8f7f58;
+margin-top:2px;
 }
 
 .payment-amount{
-font-weight:800;
-font-size:16px;
-color:#000;
+font-weight:900;
+font-size:17px;
+color:#4f4123;
 }
 
 /* FOOTER */
 
 .footer{
 text-align:center;
-margin-top:40px;
-padding-top:20px;
-border-top:1px dashed #ccc;
+margin-top:42px;
+padding-top:22px;
+border-top:1px dashed #d8ccaa;
 font-size:12px;
-color:#444;
+color:#7a6a45;
 }
 
 .footer strong{
-color:#682A49;
+color:#5f4f2c;
+}
+
+.footer p{
+margin-bottom:4px;
 }
 
 .powered-by{
-margin-top:15px;
+margin-top:18px;
 font-size:10px;
 font-weight:700;
-color:#999;
+color:#a39267;
 text-transform:uppercase;
+letter-spacing:0.12em;
 }
 
 @media print{
-body{-webkit-print-color-adjust:exact;width:100%;padding:0;}
+body{
+-webkit-print-color-adjust:exact;
+width:100%;
+padding:0;
+}
 }
 
 </style>
@@ -680,63 +713,161 @@ body{-webkit-print-color-adjust:exact;width:100%;padding:0;}
 
 <div class="company-info">
 
-<h1>Malabar Gold & Diamonds</h1>
+<h1>TWG Tea</h1>
 
 <p>
-<strong>Malabar Gold & Diamonds</strong><br>
-No 52, opposite Metro Station MG Road<br>
-Bengaluru, Karnataka 560001<br>
-India
+<strong>TWG Tea at ION Orchard</strong><br>
+2 Orchard Turn, #02-20/21<br>
+ION Orchard, Singapore 238801<br>
+Singapore
 </p>
 
 </div>
 
 <div class="bill-info">
-<div><strong>Receipt ID:</strong> <span class="bill-id">MGD-IN-BLR-71922864</span></div>
-<div><strong>Date:</strong> 07-11-2026 19:22</div>
-<div><strong>Sales Associate:</strong> Rahul Verma</div>
+
+<div>
+<strong>Receipt ID:</strong>
+<span class="bill-id">TWG-SG-95018472</span>
+</div>
+
+<div>
+<strong>Date:</strong>
+05-05-2026 16:28
+</div>
+
+<div>
+<strong>Tea Associate:</strong>
+Charlotte Lim
+</div>
+
 </div>
 
 </div>
 
 
 <div class="customer-section">
+
 <h3>Customer: ${customerName}</h3>
-<p>Thank you for shopping with Malabar Gold & Diamonds.</p>
+
+<p>
+Thank you for visiting TWG Tea Singapore.
+</p>
+
 </div>
 
 
 <table class="items-table">
 
 <thead>
+
 <tr>
-<th style="width:55%">Jewellery Item</th>
+<th style="width:50%">Tea Selection</th>
 <th style="width:10%">Qty</th>
-<th style="width:15%">Category</th>
+<th style="width:20%">Collection</th>
 <th style="width:20%">Amount</th>
 </tr>
+
 </thead>
 
 <tbody>
 
 <tr>
+
 <td>
-<div class="item-name">Stately Viridescent Generic Gold Necklace</div>
-<div class="item-desc">Premium handcrafted gold necklace</div>
+
+<div class="item-name">
+Grand Malawi
+</div>
+
+<div class="item-desc">
+Single estate blue tea with bright citrus undertones
+</div>
+
+<div class="item-meta">
+SKU: TCTWG9069<br>
+Blue Tea / Oolong • Citrus<br>
+Loose Leaf Tea • 100g pack
+</div>
+
 </td>
+
 <td>1</td>
-<td>Necklace</td>
-<td><strong>₹81,998.00</strong></td>
+
+<td>
+Single Estate Tea
+</td>
+
+<td>
+<strong>S$127.00</strong>
+</td>
+
 </tr>
 
+
 <tr>
+
 <td>
-<div class="item-name">Avant-garde Gold Earrings</div>
-<div class="item-desc">Designer gold earrings set</div>
+
+<div class="item-name">
+Moroccan Mint Tea
+</div>
+
+<div class="item-desc">
+Refreshing green tea blended with vibrant mint notes
+</div>
+
+<div class="item-meta">
+SKU: TCTWG9205<br>
+Green Tea • Mint<br>
+Tea Bags • 15 bags
+</div>
+
 </td>
+
 <td>1</td>
-<td>Earrings</td>
-<td><strong>₹44,036.00</strong></td>
+
+<td>
+Grand Classic Tea
+</td>
+
+<td>
+<strong>S$58.00</strong>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+<div class="item-name">
+Jardin Vendôme Teabag
+</div>
+
+<div class="item-desc">
+Elegant floral green tea blend in handcrafted tea bags
+</div>
+
+<div class="item-meta">
+SKU: PACKTBEX002<br>
+Green Tea • Floral<br>
+Tea Bags • 15 bags
+</div>
+
+</td>
+
+<td>2</td>
+
+<td>
+Exclusive Tea Blend
+</td>
+
+<td>
+<strong>S$60.00</strong>
+</td>
+
 </tr>
 
 </tbody>
@@ -746,14 +877,27 @@ India
 
 <div class="totals-section">
 
-<div>
-Items Purchased: 2
+<div class="totals-left">
+Items Purchased: 3
 </div>
 
 <div class="totals-table">
-<div>Subtotal: <strong>₹120,463.59</strong></div>
-<div>GST (3%): <strong>₹3,670.90</strong></div>
-<div class="net-total">Total Paid: <strong>₹126,034.00</strong></div>
+
+<div>
+Subtotal:
+<strong>S$245.00</strong>
+</div>
+
+<div>
+GST (9%):
+<strong>S$22.05</strong>
+</div>
+
+<div class="net-total">
+Total Paid:
+<strong>S$267.05</strong>
+</div>
+
 </div>
 
 </div>
@@ -762,12 +906,19 @@ Items Purchased: 2
 <div class="payment-box">
 
 <div>
-<div class="payment-title">UPI PAYMENT</div>
-<div class="payment-sub">Paid via Google Pay</div>
+
+<div class="payment-title">
+CARD PAYMENT
+</div>
+
+<div class="payment-sub">
+Paid via Visa Signature
+</div>
+
 </div>
 
 <div class="payment-amount">
-₹126,034.00
+S$267.05
 </div>
 
 </div>
@@ -775,9 +926,13 @@ Items Purchased: 2
 
 <div class="footer">
 
-<p><strong>Thank you for shopping with Malabar Gold & Diamonds!</strong></p>
+<p>
+<strong>Thank you for choosing TWG Tea.</strong>
+</p>
 
-<p>Visit again at www.malabargoldanddiamonds.com</p>
+<p>
+Discover luxury teas and exclusive blends at www.twgtea.com
+</p>
 
 <div class="powered-by">
 Powered by RDEP
@@ -786,13 +941,13 @@ Powered by RDEP
 </div>
 
 </body>
-</html>    `
+</html> `
 
     const blob = new Blob([receiptContent], { type: "text/html" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.download = "MalabarG&D_Receipt_SK251107001.html"
+    link.download = "TWG_Receipt_SK251107001.html"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
