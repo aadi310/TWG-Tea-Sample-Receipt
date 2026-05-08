@@ -171,7 +171,7 @@ const receipts = {
         teaType: "Blue Tea / Oolong",
         collection: "Single Estate Tea",
         flavour: "Citrus",
-        packaging: "Packaged Loose Leaf Tea",
+        packaging: "Loose Leaf Tea",
         size: "100g pack"
       },
       {
@@ -227,7 +227,7 @@ const receipts = {
 
         skuId: "TCTWG9089",
         teaType: "Black Tea",
-        collection: "Packaged Loose Leaf Teas",
+        collection: "Black Tea Exclusive Blend",
         flavour: "Citrus",
         packaging: "Loose Leaf Tea",
         size: "100g pack"
@@ -243,7 +243,7 @@ const receipts = {
         teaType: "White Tea",
         collection: "Exclusive Tea Blend",
         flavour: "Floral, Mineral",
-        packaging: "Packaged Loose Leaf Tea",
+        packaging: "Loose Leaf Tea",
         size: "10g pack"
       }
     ],
