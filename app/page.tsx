@@ -1577,7 +1577,7 @@ Powered by RDEP
           onClick={() => promoApi?.scrollTo(index)}
           className={`h-1.5 rounded-full transition-all duration-300 ${
             currentSlide === index
-              ? "w-5 bg-[#ede7cf]"
+              ? "w-5 bg-[#887345]"
               : "w-1.5 bg-[#d8ccaa]/70"
           }`}
         />
@@ -1807,106 +1807,157 @@ Powered by RDEP
 </div>
           
           
-      {/* Malabar Services & Promise */}
-<div className="bg-white rounded-xl border border-[#ecd9e4] p-4 font-poppins shadow-sm">
+      {/* Exclusive Offers */}
+<div className="bg-white rounded-[22px] border border-[#e5dcc3] p-4 font-poppins shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
 
+  {/* Header */}
   <div className="flex items-center justify-between mb-4">
-    <h3 className="text-base font-bold text-[#682A49] flex items-center">
-      <Sparkles className="mr-2 h-4 w-4 text-[#CE187D]" />
-      Malabar Promise
+
+    <h3 className="text-base font-bold text-[#5f4f2c] flex items-center">
+
+      <Ticket className="mr-2 h-4 w-4 text-[#887345]" />
+
+      Exclusive Offers
+
     </h3>
 
-    <span className="text-[10px] font-bold text-[#CE187D] uppercase tracking-tight">
-      Trusted Jewellery
+    <span className="text-[10px] font-bold text-[#887345] uppercase tracking-[0.14em]">
+      MYTWG PRIVILEGES
     </span>
+
   </div>
 
 
-  {/* Bridal Assistance Banner */}
-  <a
-    href="https://www.malabargoldanddiamonds.com/in/pan-india/en/book-an-appointment.html"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block mb-4 rounded-xl overflow-hidden border border-[#ecd9e4]"
-  >
-    <Image
-      src="/images/design-mode/bride-assistance.png"
-      alt="Malabar Bridal Assistance"
-      width={1200}
-      height={500}
-      className="w-full h-auto object-cover"
-    />
-  </a>
-
-
-  {/* Promise Points */}
+  {/* Coupon Cards */}
   <div className="space-y-3">
 
-    {/* Transparency */}
-    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
-      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
-        ✓
+    {/* Coupon 1 */}
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText("TEATIME15")
+      }}
+      className="w-full text-left group"
+    >
+
+      <div className="relative overflow-hidden rounded-[20px] border border-[#d8ccaa] bg-[#faf7ef] p-4 transition-all active:scale-[0.99]">
+
+        {/* Decorative Circle */}
+        <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-[#e5dcc3] rounded-full" />
+
+        <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-[#e5dcc3] rounded-full" />
+
+        <div className="absolute top-0 bottom-0 left-[22px] border-l border-dashed border-[#d8ccaa]" />
+
+        <div className="absolute top-0 bottom-0 right-[22px] border-l border-dashed border-[#d8ccaa]" />
+
+
+        <div className="flex items-center justify-between relative z-10">
+
+          <div>
+
+            <div className="text-[10px] uppercase tracking-[0.18em] text-[#a39267] font-semibold mb-1">
+              Exclusive Boutique Offer
+            </div>
+
+            <div className="text-lg font-bold text-[#5f4f2c] tracking-[0.06em]">
+              TEATIME15
+            </div>
+
+            <div className="text-[11px] text-[#8f7f58] mt-1 leading-relaxed">
+              Enjoy 15% savings on selected packaged tea collections.
+            </div>
+
+          </div>
+
+
+          <div className="text-center ml-4">
+
+            <div className="w-10 h-10 rounded-full bg-[#887345] flex items-center justify-center mb-1">
+
+              <Copy className="h-4 w-4 text-white" />
+
+            </div>
+
+            <div className="text-[10px] font-semibold text-[#887345]">
+              Tap to Copy
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div>
-        <div className="text-xs font-semibold text-[#682A49]">
-          Complete Transparency
+    </button>
+
+
+    {/* Coupon 2 */}
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText("TWGGIFT25")
+      }}
+      className="w-full text-left group"
+    >
+
+      <div className="relative overflow-hidden rounded-[20px] border border-[#d8ccaa] bg-[#fffdfa] p-4 transition-all active:scale-[0.99]">
+
+        {/* Decorative Circle */}
+        <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-[#e5dcc3] rounded-full" />
+
+        <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-[#e5dcc3] rounded-full" />
+
+        <div className="absolute top-0 bottom-0 left-[22px] border-l border-dashed border-[#d8ccaa]" />
+
+        <div className="absolute top-0 bottom-0 right-[22px] border-l border-dashed border-[#d8ccaa]" />
+
+
+        <div className="flex items-center justify-between relative z-10">
+
+          <div>
+
+            <div className="text-[10px] uppercase tracking-[0.18em] text-[#a39267] font-semibold mb-1">
+              Tea Gift Collection
+            </div>
+
+            <div className="text-lg font-bold text-[#5f4f2c] tracking-[0.06em]">
+              TWGGIFT25
+            </div>
+
+            <div className="text-[11px] text-[#8f7f58] mt-1 leading-relaxed">
+              Redeem complimentary gift wrapping on premium tea selections.
+            </div>
+
+          </div>
+
+
+          <div className="text-center ml-4">
+
+            <div className="w-10 h-10 rounded-full bg-[#887345] flex items-center justify-center mb-1">
+
+              <Copy className="h-4 w-4 text-white" />
+
+            </div>
+
+            <div className="text-[10px] font-semibold text-[#887345]">
+              Tap to Copy
+            </div>
+
+          </div>
+
         </div>
-        <div className="text-[11px] text-gray-500">
-          Detailed invoice showing gross weight, stone weight and net gold weight for every jewellery piece.
-        </div>
+
       </div>
-    </div>
+
+    </button>
+
+  </div>
 
 
-    {/* Lifetime Maintenance */}
-    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
-      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
-        ✓
-      </div>
+  {/* Footer */}
+  <div className="mt-4 pt-4 border-t border-dashed border-[#ddd2b5]">
 
-      <div>
-        <div className="text-xs font-semibold text-[#682A49]">
-          Assured Lifetime Maintenance
-        </div>
-        <div className="text-[11px] text-gray-500">
-          Complimentary lifetime maintenance available at any of our 410+ showrooms across 14 countries.
-        </div>
-      </div>
-    </div>
-
-
-    {/* Hallmark Gold */}
-    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
-      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
-        ✓
-      </div>
-
-      <div>
-        <div className="text-xs font-semibold text-[#682A49]">
-          BIS 916 Hallmarked Pure Gold
-        </div>
-        <div className="text-[11px] text-gray-500">
-          All gold jewellery is guaranteed with 100% HUID hallmarking for certified purity.
-        </div>
-      </div>
-    </div>
-
-
-    {/* Natural Diamonds */}
-    <div className="flex items-start gap-3 bg-[#F7F2F5] p-3 rounded-lg border border-[#ecd9e4]">
-      <div className="w-7 h-7 rounded-full bg-[#CE187D]/10 flex items-center justify-center text-[#CE187D] text-xs font-bold">
-        ✓
-      </div>
-
-      <div>
-        <div className="text-xs font-semibold text-[#682A49]">
-          Certified Natural Diamonds
-        </div>
-        <div className="text-[11px] text-gray-500">
-          Every diamond undergoes 28 strict quality checks before reaching our customers.
-        </div>
-      </div>
+    <div className="text-[10px] text-center text-[#9d8b60] leading-relaxed">
+      Offers are applicable at participating TWG Tea boutiques and selected online purchases.
     </div>
 
   </div>
