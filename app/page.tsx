@@ -2489,25 +2489,6 @@ Powered by RDEP
 
 
   {/* Powered by */}
-  <div className="text-center mt-3 pt-3 border-t border-[#ece3cc]">
-
-    <div className="flex items-center justify-center space-x-1.5">
-
-      <span className="text-[11px] text-[#a39267] font-medium">
-        Powered by
-      </span>
-
-      <Image
-        src="/images/design-mode/RDEP%20cropped.png"
-        alt="RDEP"
-        width={60}
-        height={16}
-        className="object-contain"
-      />
-
-    </div>
-
-  </div>
 
 </div>
           <div id="height-marker" style={{ height: "1px" }} />
